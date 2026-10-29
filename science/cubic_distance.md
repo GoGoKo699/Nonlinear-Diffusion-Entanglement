@@ -54,7 +54,7 @@ The bound follows by integrating the half trace-norm difference of two channels,
 For nonzero drift, Anderson's inequality for centered Gaussian measures on Hilbert space and convex symmetric $`L^2`$ balls gives
 
 ```math
-\Pr(Z_\delta<x)\le\Pr(Z_0<x),\quad x>0.
+\Pr(Z_\delta\lt x)\le\Pr(Z_0\lt x),\qquad x\gt0.
 ```
 
 Alternatively, the explicit noncentral Laplace transform in [the mixture chapter](conditional_gaussian.md) is bounded above by the centered transform because $`\tanh(r/2)\le r/2`$; applying the same Chernoff bound directly yields the displayed result, without needing a separate Anderson inequality.
