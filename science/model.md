@@ -1,60 +1,58 @@
-# Normal semigroup, resources, and the theorem contract
+# Model, conventions, and precise claims
 
-## Model
+## Normal random-unitary quantum Markov semigroup
 
-Let $\mathcal H=L^2(\mathbb R)$ and let $Q,P$ be the standard Schrödinger pair $[Q,P]=iI$ on a common core. Put $H=P^2/2$. The *normal random-unitary semigroup* $\Phi_t$ has the formal generator
+The system Hilbert space is $`\mathcal H=L^2(\mathbb R)`$. The standard Schrödinger pair $`Q,P`$ obeys $`[Q,P]=iI`$ on a common core; $`H=P^2/2`$ is free kinetic energy. Fix $`D>0`$, $`\kappa>0`$, $`\eta\ge0`$, and $`\omega\in\mathbb R`$. In formal double-commutator notation,
 
-$$
-\mathcal L=-i\omega\,\operatorname{ad}_H
--D\,\operatorname{ad}_Q^2-\kappa\,\operatorname{ad}_H^2
--\eta\,\operatorname{ad}_P^2,
-\quad D,\kappa>0,\quad\eta\ge0,\quad\omega\in\mathbb R.
-$$
+```math
+\mathcal L=-i\omega\operatorname{ad}_{H}
+-D\operatorname{ad}_{Q}^2
+-\kappa\operatorname{ad}_{H}^2
+-\eta\operatorname{ad}_{P}^2.
+```
 
-To avoid unjustified manipulations of unbounded Lindblad operators, define the channel as the expectation of the unitary stochastic evolution whose independent Stratonovich Hamiltonian increments are
+These coefficients are fixed and finite unless a limit is explicitly stated. **The channel is defined through a normal, trace-preserving random-unitary process**: independent standard real Brownian motions $`B,W,Z`$ multiply the self-adjoint generators $`H,Q,P`$ with Stratonovich increments
 
-$$
+```math
 \omega H\,dt+\sqrt{2\kappa}\,H\circ dB_t
-+\sqrt{2D}\,Q\circ dW_t+\sqrt{2\eta}\,P\circ dZ_t.
-$$
++\sqrt{2D}\,Q\circ dW_t
++\sqrt{2\eta}\,P\circ dZ_t.
+```
 
-Equivalently use the exact conditional Gaussian displacement integral in [the next chapter](conditional_gaussian.md). All unitaries are defined by Weyl displacements and shears on $\mathcal H$; their averaged action on normal trace-class states is CPTP, and independent increments establish the semigroup. On a suitable Schwartz finite-rank core it has the displayed formal generator. There is no harmonic trapping Hamiltonian in the evolution.
+One may equivalently define the average channel by the conditional Gaussian integral in [the next chapter](conditional_gaussian.md), avoiding a formal exponential of unbounded superoperators. The resulting random-unitary propagator is strongly defined through Weyl displacements and metaplectic shears. Averaging the increments gives the displayed generator on a suitable Schwartz finite-rank core; independent Brownian increments give the semigroup property. For $`\eta=0`$ the $`Z`$ process is absent.
 
-The environment and all Brownian paths are unobserved. No environment outcome, noiseless quantum bypass, or intermediate correction is granted. The reference system in the channel norm is arbitrary.
+The stochastic environment is *not measured*. Random paths are not free classical side information for decoding. No additional quantum carrier crosses the noise interval, and no intermediate correction is built into the one-use channel. The final receiver may act jointly on the output with arbitrary ancillas under the usual operational definitions.
 
-## Operational definitions
+## Distances and exact loss of entanglement
 
-$\Phi$ is **entanglement breaking (EB)** when $(\Phi\otimes\mathrm{id}_R)(\rho_{SR})$ is separable for every normal joint state and every reference; separable means the trace-norm closed convex hull of product states. It is **PPT-inducing** when every such output remains positive under reference partial transpose. EB implies PPT-inducing.
+A channel $`\Phi`$ is **entanglement breaking (EB)** if $`(\Phi\otimes\operatorname{id}_R)(\rho_{SR})`$ is separable for every (possibly infinite-dimensional) reference $`R`$ and normal state. Separability means the trace-norm closed convex hull of product states. It is **PPT-inducing** if all such outputs are positive under reference partial transpose; EB implies PPT-inducing.
 
-The energy-unconstrained distance to EB is
+Define the energy-*unconstrained* operational distance
 
-$$
-e(t)=\inf_{\Psi\in\mathrm{EB}}
-\frac12\|\Phi_t-\Psi\|_\diamond.
-$$
+```math
+e(t)=\inf_{\Psi\in\mathrm{EB}}\frac12\|\Phi_t-\Psi\|_\diamond.
+```
 
-The diamond norm includes arbitrary reference dimensions and no energy cutoff. To check explicit finite-energy witnesses we use the reference oscillator cost
+The diamond norm is the completely bounded trace norm on trace-class input, including arbitrary reference dimensions. Every EB mixture used below is an actual normal channel; no distributional maximally entangled oscillator vector is introduced. A sufficient reference-energy measure for explicit witnesses is $`H_{\mathrm{ref}}=(Q^2+P^2)/2`$ (the unit-frequency oscillator), **not** the dynamical free Hamiltonian $`H=P^2/2`$.
 
-$$ H_{\rm ref}=(Q^2+P^2)/2, $$
+## Proven statements and quantifiers
 
-which is **not** the dynamical free Hamiltonian $H=P^2/2$.
+**Theorem A (exact cutoff).** For the displayed model with $`\kappa>0`$, the first EB time is $`(2\sqrt{D\eta})^{-1}`$ if $`\eta>0`$, and is infinite when $`\eta=0`$. At and after a finite first EB time the channel is EB. Every strictly earlier positive time admits an input entangled with a *qubit* reference, of finite $`H_{\mathrm{ref}}`$ energy, with an NPT output. The same interval is the complement of the PPT-inducing interval. [Proof](exact_threshold.md).
 
-## Exact statements
+**Theorem B (cubic operational proximity).** For $`\eta=0`$ and $`D=\kappa=1`$, at every $`t\ge1`$,
 
-**A. Sharp EB and PPT threshold:** For $\kappa>0$, the first EB time equals $(2\sqrt{D\eta})^{-1}$ when $\eta>0$, and is infinite when $\eta=0$. At and after the finite threshold the channel is EB; at every strictly earlier time a finite-$H_{\rm ref}$-energy state with a two-dimensional reference has NPT output. [Proof](exact_threshold.md).
-
-**B. Unconstrained cubic-law proximity:** For $\eta=0$, $D=\kappa=1$ and fixed finite $\omega$, for all $t\ge1$,
-
-$$
-\frac{c_*}{1+\omega^2}e^{-4t^3-\omega^2t/2}
-\le e(t)\le
+```math
+\frac{c_*}{1+\omega^2}\,e^{-4t^3-\omega^2t/2}
+\ \le e(t)\le
 \min\left\{1,\sqrt{\frac{8t^3}{1-e^{-8t^3}}}\,e^{-t^3}\right\},
-$$
+```
 
-where $c_*=0.02153222609588753\ldots>0$ is given in elementary exact form in [the proof](cubic_distance.md). The general fixed-rate logarithmic order is $\Theta(D^2\kappa t^3)$, not an exact optimized exponent coefficient.
+where $`c_*=0.02153222609588753\ldots>0`$ has an exact elementary expression in [the proof](cubic_distance.md). In general units, the cubic variable is $`D^2\kappa t^3`$. Consequently $`-\log e(t)=\Theta(D^2\kappa t^3)`$ at fixed $`D,\kappa,\omega`$ as $`t\to\infty`$. No optimal leading exponent coefficient is claimed.
 
-**C. Fixed finite-energy input:** For $\eta=0$, every fixed two-mode squeezed vacuum with nonzero finite squeezing has NPT output after applying $\Phi_t$ to only one mode, for all finite $t>0$. This is qualitative and need not give useful quantum memory. [Proof](fixed_input.md).
+**Corollary C (fixed input).** For $`\eta=0`$, every fixed two-mode squeezed vacuum of nonzero *finite* squeezing has NPT output after applying $`\Phi_t`$ to one factor, at every finite $`t>0`$. The statement is qualitative and does not bound the size of surviving entanglement. [Proof](fixed_input.md).
 
-**Gaussian comparison, not a $\kappa>0$ theorem:** For $\kappa=0$, the threshold is the first positive root of $4D\eta t^2+(D^2\omega^2/3)t^4=1$; it is infinite when the expression never reaches one. [Derivation](interpretation.md).
+**Weak-noise consequence.** At fixed $`D>0`$, $`\omega\ne0`$, $`\eta=0`$ and any time strictly beyond the Gaussian cutoff, the distance satisfies $`e(t)\le C\exp(-c/\kappa)`$ for some positive $`C,c`$ independent of sufficiently small $`\kappa>0`$. This is a one-sided bound, not a matched weak-noise asymptotic. [Derivation](interpretation.md#3-weak-quadratic-dephasing-the-discontinuity-is-operationally-tiny).
 
-These results neither imply positive quantum capacity nor generalize automatically to other nonlinear Lindblad generators. The input-energy statement in A means every *particular witness* has finite energy; it is not a uniform energy bound over all times.
+**Gaussian comparison ($`\kappa=0`$).** This is a separate model: the first EB time is the first nonnegative root of $`4D\eta t^2+D^2\omega^2t^4/3=1`$ (infinite when the left side is identically zero). [Derivation](interpretation.md).
+
+These statements do **not** imply quantum capacity, fixed-quality storage, a practical error-correction protocol, a general nonlinear Lindblad classification, a finite-spin result, or a norm-small perturbation when changing the coefficient of an unbounded noise generator.

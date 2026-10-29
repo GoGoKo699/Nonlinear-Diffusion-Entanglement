@@ -14,18 +14,19 @@ python3 -m venv .venv
 .venv/bin/python verification/run_checks.py
 ```
 
-The runner executes four modules and prints its complete JSON report. Fresh reports are written to the ignored directory `verification/local_results/`. Before importing the checks it atomically replaces `checks.json` with `status: running` and `all_assertions_passed: false`. Each completed module updates that report. A failure records the active module and exception and exits unsuccessfully; interruption cannot leave an earlier passing report masquerading as the current run. Only `status: passed` together with `all_assertions_passed: true` denotes a complete run.
+The runner executes five modules and prints its complete JSON report. Fresh reports are written to the ignored directory `verification/local_results/`; `--output path/to/report.json` selects another destination. Before importing the checks it atomically replaces the manifest with `status: running` and `all_assertions_passed: false`. Each completed module updates that report. A failure records the active module and exception and exits unsuccessfully; interruption cannot leave an earlier passing report masquerading as the current run. Only `status: passed` together with `all_assertions_passed: true` denotes a complete run.
 
 | Module | What is checked | What is not established |
 |---|---|---|
 | [check_threshold.py](check_threshold.py) | Six positive-kappa Gaussian-packet cases: independently evaluated coherence and diagonal integrals, their analytical bounds and expected witness signs | Universal sharpness, the endpoint, optimal witness energy |
-| [check_bounds.py](check_bounds.py) | Cosine-packet overlap integral and constant, five finite spectral Laplace comparisons, Gaussian determinants, Gaussian cutoff and nine packet-parameter inequality cases | Optimal cubic coefficient, full diamond-distance computation |
+| [check_bounds.py](check_bounds.py) | Cosine-packet overlap and constant, finite spectral Laplace comparisons, Gaussian determinants and cutoff, packet-parameter inequalities and the weak-noise expansion | Optimal cubic coefficient, full diamond-distance computation |
+| [check_kernel.py](check_kernel.py) | Five unreduced-kernel packet reductions, three differential-generator residuals and three semigroup-composition integrals | An all-parameter proof from finite differences or quadrature |
 | [check_learning.py](check_learning.py) | Qubit generator/Bell-state example, three deterministic covariance examples, rate rescaling, Brownian trace, packet moments, squeezed-state energy and bounded finite-rank filtering | The infinite-dimensional theorem from finite truncations |
 | [check_repository.py](check_repository.py) | Exactly M01–M30, 12/18 phase split, required target fields, backward-only dependencies, local file/section links, source bridge routes and topic-based science | Scientific truth, external-link availability, actual hosted mathematical rendering |
 
 For the threshold cases, the expected NPT-sign pattern is `true, true, false, false, true, true`. The two nonnegative tested witnesses at or above the threshold are consistent checks, not independent proofs of EB. The exact overlap constant is `2/3 + 5/pi**2`, and the cubic lower-bound constant evaluates to approximately `0.02153222609588753`.
 
-The committed [reference_results.json](reference_results.json) records the earlier research-stage summary. It is not a fresh-run manifest and does not include the later learning/structure checks. Compare a new run's actual outputs rather than treating this historical reference as evidence that the new code executed.
+The committed [reference_results.json](reference_results.json) records the expanded research-stage threshold, bound and independent-kernel run. It is not a fresh-run manifest and does not include the later learning/structure checks. Compare a new run's actual outputs rather than treating this reference as evidence that the new code executed.
 
 ## Actual hosted-rendering check
 

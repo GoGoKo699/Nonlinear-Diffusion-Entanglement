@@ -91,7 +91,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Independent Hamiltonian noises define the channel that will later be decomposed into conditional Gaussian components.
 
-**Sources:** Rivas–Huelga 3 and 5.2 for evolution context; [Brownian bridge section](RIVAS_HUELGA_BRIDGE.md#from-dephasing-to-brownian-motion); [model](../science/model.md).
+**Sources:** Rivas–Huelga 3 and 5.2 for evolution context; [Brownian-noise bridge](RIVAS_HUELGA_BRIDGE.md#from-dephasing-to-brownian-motion); [model](../science/model.md).
 
 ### M08 — Gaussian displacement and covariance conventions
 
@@ -166,7 +166,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Scalar commutators make the ordering phase irrelevant to density-operator conjugation.
 
-**Sources:** Rivas–Huelga 3; [interaction-picture bridge](RIVAS_HUELGA_BRIDGE.md#from-an-interaction-picture-to-a-conditional-gaussian-channel); [conditional representation](../science/conditional_gaussian.md).
+**Sources:** Rivas–Huelga 3; [interaction-picture bridge](RIVAS_HUELGA_BRIDGE.md#from-an-interaction-picture-to-a-conditional-gaussian-channel); [conditional representation, Section 1](../science/conditional_gaussian.md#1-factor-the-stochastic-shear).
 
 ### M14 — Separate the covariance floor from temporal shear variation
 
@@ -178,7 +178,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** The same determinant drives both the finite-time sufficient threshold and the exceptional-path probability.
 
-**Sources:** [Conditional covariance and Brownian scaling](../science/conditional_gaussian.md); [bridge](RIVAS_HUELGA_BRIDGE.md#from-an-interaction-picture-to-a-conditional-gaussian-channel).
+**Sources:** [Conditional covariance and Brownian scaling, Section 2](../science/conditional_gaussian.md#2-a-gram-determinant-that-controls-channel-classicality); [bridge](RIVAS_HUELGA_BRIDGE.md#from-an-interaction-picture-to-a-conditional-gaussian-channel).
 
 ### M15 — A sufficient EB time that includes equality
 
@@ -190,7 +190,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Existence of some non-EB paths below the floor threshold is not a converse for their mixture.
 
-**Sources:** [Exact threshold, upper proof](../science/exact_threshold.md#upper-proof-a-pathwise-gaussian-measurement); [primary attribution](../references/RELATED_WORK.md).
+**Sources:** [Exact threshold, Section 1](../science/exact_threshold.md#1-pathwise-measure-and-preparation-the-upper-proof); [primary attribution](../references/RELATED_WORK.md).
 
 ### M16 — Resolve the averaged channel in momentum variables
 
@@ -202,7 +202,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** The variable $y$ controls coherence, while diffusion acts on mean momentum.
 
-**Sources:** [Momentum-kernel calculation](../science/exact_threshold.md#independent-momentum-kernel-calculation); [related work](../references/RELATED_WORK.md).
+**Sources:** [Momentum-kernel calculation, Section 2](../science/exact_threshold.md#2-exact-momentum-space-kernel); [related work](../references/RELATED_WORK.md).
 
 ### M17 — Prepare a legitimate finite-energy witness
 
@@ -214,7 +214,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** No momentum eigenstate or unnormalizable oscillator maximally entangled vector is needed.
 
-**Sources:** [Gaussian-packet witness](../science/exact_threshold.md#normalized-finite-energy-reference-witness); [primer](README.md#5-why-the-two-main-proofs-need-different-witnesses).
+**Sources:** [Gaussian-packet witness, Section 3](../science/exact_threshold.md#3-an-actual-finite-energy-systemreference-witness); [primer](README.md#5-why-the-two-main-proofs-need-different-witnesses).
 
 ### M18 — Coherence must exceed wrong-packet leakage
 
@@ -226,7 +226,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** The witness is applied to the averaged channel, so it addresses the operational task that a favorable trajectory alone cannot settle.
 
-**Sources:** [Normalized witness and its expectation](../science/exact_threshold.md#normalized-finite-energy-reference-witness); [verification](../verification/README.md).
+**Sources:** [Normalized witness and its expectation, Section 3](../science/exact_threshold.md#3-an-actual-finite-energy-systemreference-witness); [verification](../verification/README.md).
 
 ### M19 — Compare the competing tails
 
@@ -238,7 +238,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Finite drift contributes damping but does not change the controlling coefficient $1/(Dt)-4\eta t$.
 
-**Sources:** [Positive integrals](../science/exact_threshold.md#exact-positive-integral-formulas); [matching argument](../science/exact_threshold.md#match-the-bounds-and-prove-sharpness).
+**Sources:** [Positive integrals, Section 4](../science/exact_threshold.md#4-positive-one-dimensional-integral-reduction); [matching argument, Section 5](../science/exact_threshold.md#5-prove-the-exact-threshold-including-its-endpoint).
 
 ### M20 — Close the exact EB and PPT boundary
 
@@ -250,7 +250,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** The same boundary separates PPT-inducing from non-PPT-inducing channels in this model, without a capacity inference.
 
-**Sources:** [Exact theorem](../science/exact_threshold.md#exact-theorem); [model contract](../science/model.md).
+**Sources:** [Exact theorem](../science/exact_threshold.md#theorem-and-significance-of-the-quantifiers); [model contract](../science/model.md).
 
 ### M21 — The zero-quadratic-noise model is different
 
@@ -262,7 +262,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Unbounded generators and exact set membership make a singular boundary possible without a demonstrated useful-memory gain.
 
-**Sources:** [Gaussian comparison and weak-noise bound](../science/interpretation.md); [source-domain warning](RIVAS_HUELGA_BRIDGE.md#the-finite-dimensional-boundary-of-the-source).
+**Sources:** [Gaussian comparison and weak-noise bound, Sections 2–3](../science/interpretation.md); [source-domain warning](RIVAS_HUELGA_BRIDGE.md#the-finite-dimensional-boundary-of-the-source).
 
 ### M22 — Replace exceptional paths by an EB channel
 
@@ -274,7 +274,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Conditioning is an analytical device; the construction grants the receiver no trajectory information.
 
-**Sources:** [Uniform upper estimate](../science/cubic_distance.md#1-the-uniform-upper-estimate); [bridge](RIVAS_HUELGA_BRIDGE.md#reference-assisted-entanglement-and-distance).
+**Sources:** [Uniform upper estimate, Section 1](../science/cubic_distance.md#1-uniform-upper-bound-by-removing-exceptional-brownian-paths); [bridge](RIVAS_HUELGA_BRIDGE.md#reference-assisted-entanglement-and-distance).
 
 ### M23 — Centered Brownian motion supplies the rare-event scale
 
@@ -286,7 +286,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Brownian scaling introduces $D^2\kappa t^3$, while deterministic shear enters the noncentral shift.
 
-**Sources:** [Brownian quadratic functional](../science/conditional_gaussian.md#brownian-quadratic-functional); [finite checks](../verification/README.md).
+**Sources:** [Brownian quadratic functional, Section 4](../science/conditional_gaussian.md#4-a-brownian-small-ball-event-and-its-exact-transform); [finite checks](../verification/README.md).
 
 ### M24 — Obtain the cubic-exponential upper bound
 
@@ -298,7 +298,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Positive finite-time entanglement can coexist with an extremely small all-input distance to EB.
 
-**Sources:** [Cubic upper proof](../science/cubic_distance.md#1-the-uniform-upper-estimate); [theorem contract](../science/model.md).
+**Sources:** [Cubic upper proof, Section 1](../science/cubic_distance.md#1-uniform-upper-bound-by-removing-exceptional-brownian-paths); [theorem contract](../science/model.md).
 
 ### M25 — Normalize a quantitative converse
 
@@ -310,7 +310,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Normalization and shared integration weight are essential when comparing two exponentially small quantities.
 
-**Sources:** [Compact packets](../science/cubic_distance.md#2-exactly-orthogonal-finite-energy-packets); [common weight](../science/cubic_distance.md#3-exact-common-weight-and-mehler-inequalities).
+**Sources:** [Compact packets, Section 2](../science/cubic_distance.md#2-exactly-orthogonal-finite-energy-momentum-packets); [common weight, Section 3](../science/cubic_distance.md#3-shared-weight-and-mehler-bounds).
 
 ### M26 — Choose centers and widths to keep a positive gap
 
@@ -322,7 +322,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** One and four are different bounding cubic coefficients; matching order is not matching the exact exponent.
 
-**Sources:** [Parameter choice and constant](../science/cubic_distance.md#4-choose-the-packet-parameters); [statement](../science/cubic_distance.md#statement-and-conventions).
+**Sources:** [Parameter choice and constant, Section 4](../science/cubic_distance.md#4-parameter-choice-and-a-positive-universal-constant); [statement](../science/cubic_distance.md#theorem).
 
 ### M27 — Restore physical rates and charge witness energy
 
@@ -334,7 +334,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** The energy cost of this construction is not a lower bound on the energy needed merely for nonzero entanglement.
 
-**Sources:** [Energy and general strengths](../science/cubic_distance.md#5-energy-and-general-positive-strengths); [learning verification](../verification/check_learning.py).
+**Sources:** [Energy and general strengths, Section 5](../science/cubic_distance.md#5-physical-resource-and-general-rate-scaling); [learning verification](../verification/check_learning.py).
 
 ### M28 — Exchange time-dependent witnesses for one fixed input
 
@@ -346,7 +346,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** A vanishingly unlikely filter branch proves qualitative NPT, not useful entanglement strength or recovery performance.
 
-**Sources:** [Fixed-input proof](../science/fixed_input.md); [bridge to the three results](RIVAS_HUELGA_BRIDGE.md#the-bridge-to-the-three-results).
+**Sources:** [Fixed-input proof](../science/fixed_input.md#bounded-reference-filter-proof); [bridge to the three results](RIVAS_HUELGA_BRIDGE.md#the-bridge-to-the-three-results).
 
 ### M29 — Convert proximity into a logical-memory limitation
 
@@ -358,7 +358,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Connection:** Surviving NPT and poor worst-task storage are compatible, rather than contradictory conclusions.
 
-**Sources:** [Fixed logical register](../science/interpretation.md#consequence-for-a-fixed-logical-register); [primer synthesis](README.md#6-read-the-conclusions-with-their-quantifiers).
+**Sources:** [Fixed logical register, Section 4](../science/interpretation.md#4-what-an-operational-approximation-says-about-coding); [primer synthesis](README.md#6-read-the-conclusions-with-their-quantifiers).
 
 ### M30 — The complete contribution and its evidence
 

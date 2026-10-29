@@ -1,5 +1,6 @@
 """Run finite scientific and repository checks with a fresh atomic manifest."""
 from datetime import datetime, timezone
+import argparse
 import importlib
 import importlib.metadata
 import json
@@ -28,8 +29,8 @@ def write_report(path, report):
         temporary.unlink(missing_ok=True)
 
 
-def main():
-    destination = ROOT/'verification/local_results/checks.json'
+def run_all(output=None):
+    destination = Path(output) if output is not None else ROOT/'verification/local_results/checks.json'
     try:
         revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
                                             stderr=subprocess.DEVNULL, text=True).strip()
@@ -43,10 +44,10 @@ def main():
     write_report(destination, report)
     try:
         report['packages'] = {n: importlib.metadata.version(n) for n in ('numpy', 'scipy')}
-        for name in ('check_threshold', 'check_bounds', 'check_learning', 'check_repository'):
+        for name in ('threshold', 'bounds', 'kernel', 'learning', 'repository'):
             report['active_check'] = name
             write_report(destination, report)
-            report['checks'][name] = importlib.import_module(name).run_checks()
+            report['checks'][name] = importlib.import_module('check_'+name).run_checks()
             write_report(destination, report)
         report.pop('active_check', None)
         report.update(status='passed', all_assertions_passed=True)
@@ -56,7 +57,14 @@ def main():
         write_report(destination, report)
         raise
     write_report(destination, report)
-    print(json.dumps(report, indent=2, sort_keys=True, allow_nan=False))
+    return report
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, help='Override the fresh JSON manifest location.')
+    args = parser.parse_args()
+    print(json.dumps(run_all(args.output), indent=2, sort_keys=True, allow_nan=False))
 
 
 if __name__ == '__main__':

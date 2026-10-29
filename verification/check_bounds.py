@@ -1,7 +1,9 @@
-"""Finite checks of spectral Laplace law, cosine-packet overlap and covariance.
+"""Independent finite consistency checks for Brownian small-ball, packet
+normalization, covariance determinants and cubic lower constants.
 
-No finite sample is treated as an analytical proof.
+These are finite numerical checks; they do not prove the asymptotic theorem.
 """
+
 import math
 import numpy as np
 from scipy.integrate import quad
@@ -60,6 +62,7 @@ def run_checks():
         det=finite_gaussian_det(D,eta,omega,t)
         explicit=4*D*eta*t*t+(D*omega)**2*t**4/3
         assert abs(det-explicit)<1e-12
+    # A deterministic shear at kappa=0, eta=0, omega !=0.
     t_G=3**.25/math.sqrt(2*.7)
     assert abs(finite_gaussian_det(2,0,.7,t_G)-1)<2e-12
     for t in (1.,2.,3.):
@@ -73,10 +76,21 @@ def run_checks():
             assert vmax*w*w/math.tanh(vmin*t)<1/32
             assert 2*a*w/t<=.25+1e-12
             assert (a-w)**2/t>=4*t**3+omega**2*t/2-.25-1e-12
+    weak_noise=[]
+    for kappa in (.1,.02,.005):
+        D,omega,t,r=1.,1.,1.6,.4
+        rate=omega**2*t/4*(1-2*math.tanh(r/2)/r)-r*r/(16*D*D*t**3)
+        assert rate>0
+        delta=omega*math.sqrt(t/(2*kappa))
+        direct=log_laplace(r*r/2,delta)+r*r/(16*D*D*kappa*t**3)
+        predicted=.5*math.log(r/math.sinh(r))-rate/kappa
+        assert abs(direct-predicted)<2e-12
+        weak_noise.append({'kappa':kappa,'rate':rate,'log_upper_bound':predicted})
     assert lower_constant()>.0215
     return {"c_f_integral":integral,"c_f_exact":c_f_exact(),
             "c_star":lower_constant(),"gaussian_threshold_t":t_G,
-            "brownian_laplace_tests":values,"all_assertions_passed":True}
+            "brownian_laplace_tests":values,"weak_kinetic_noise":weak_noise,
+            "all_assertions_passed":True}
 
 
 if __name__ == '__main__':
