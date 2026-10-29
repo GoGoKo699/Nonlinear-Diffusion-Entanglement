@@ -44,10 +44,13 @@ The stochastic construction defines a normal CPTP map on the trace class. Condit
 With $`\overline S=t^{-1}\int_0^t S_sds`$,
 
 ```math
-\det V_S=4D\eta t^2
-+4D^2\left[t\int_0^tS_s^2ds-
-\left(\int_0^tS_sds\right)^2\right]
-=4D\eta t^2+4D^2t\int_0^t(S_s-\overline S)^2ds.
+\begin{aligned}
+\det V_S
+&=4D\eta t^2+4D^2\left(
+ t\int_0^{t} S_s^2\,ds
+ -\left(\int_0^{t} S_s\,ds\right)^2\right)\\
+&=4D\eta t^2+4D^2t\int_0^{t}(S_s-\overline S)^2\,ds.
+\end{aligned}
 ```
 
 The second term is nonnegative. More explicitly, with $`u=s/t`$ and a standard Brownian motion $`W_u`$ on $`[0,1]`$, define
