@@ -1,81 +1,149 @@
 {
   "checked_on": "2026-10-29",
-  "source_commit": "563e769a7c7c617a6cacef58bc7617fc1ec1d6ba",
-  "workflow_run": 40815066845,
-  "artifact_sha256": "0c92bcb3fe72036c7fee218a52643cc84ed5c921e027cbee0c07783f391bd31e",
+  "source_commit": "01284158e8cccd9071b7b59ebf461bee430953fe",
+  "source_tree": "d7384cc673be7357b25289f2d20e197718dc10bd",
+  "workflow_run": 40817669168,
+  "artifact_id": 12872324345,
+  "artifact_sha256": "b79962483163027319c0b76a3101806c38c90dc3c66456ae83ddc35b1113026d",
   "automated_status": "passed",
-  "visual_review": "completed for the README, learning route, bridge, primer, milestone phase transition and synthesis, conditional channel, threshold, cubic proof, model and fixed-input pages; top captures supplement article screenshots where GitHub sticky navigation overlaps their upper edge",
-  "scope_limits": "Desktop viewport 1440x1080; no claim about every device or future renderer. Finite consistency checks are not proof or priority certification.",
+  "visual_review": "Representative body panels inspected for all 15 captured Markdown pages; the complete cubic-distance argument and repaired Gram determinant were checked explicitly. The milestone beginning, phase transition and final synthesis were inspected. This is not an assertion that every pixel on every page or device was reviewed.",
+  "supersedes": "The unqualified visual-pass assessment at 563e769 missed a silently truncated probability inequality and crowded determinant; these displays are repaired here.",
+  "scope_limits": "Desktop 1440x1080. Page identities below are the captured source, not self-referential hashes for later review-record edits. No proof, priority or every-device certification.",
   "pages": [
     {
       "path": "README.md",
       "git_blob_sha": "4fb40c597306ccdda6db38ec479f7d5188018e59",
       "math_nodes": 21,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     },
     {
       "path": "learning/README.md",
       "git_blob_sha": "0770bbbcd4177efa91416492517785b1bb8ec84c",
       "math_nodes": 0,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     },
     {
       "path": "learning/HOLEVO_BRIDGE.md",
       "git_blob_sha": "e46124ed24718ce8556e6297062bdc3856b835b8",
       "math_nodes": 30,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     },
     {
       "path": "learning/PRIMER.md",
       "git_blob_sha": "5c0d13831c4687540041dd92fa21e6af32051e53",
       "math_nodes": 70,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     },
     {
       "path": "learning/MILESTONES.md",
       "git_blob_sha": "86a6b4257b992d0b7ac37a39e1ad7b599f451a1e",
       "math_nodes": 0,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     },
     {
       "path": "science/conditional_gaussian.md",
-      "git_blob_sha": "a2cc2e160effa65a2f3cc5541fc5f1c7dde927e6",
+      "git_blob_sha": "f868843582b5d2fe045e45f0b06f9a6c3a5d1504",
       "math_nodes": 50,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     },
     {
       "path": "science/exact_threshold.md",
       "git_blob_sha": "aa6a50d1365a9e03978b67c5f51b1061f59d4e82",
       "math_nodes": 91,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     },
     {
       "path": "science/cubic_distance.md",
-      "git_blob_sha": "73dc1ad16b110908c00a4e94a6ba0eeca98278ae",
+      "git_blob_sha": "cd70948b4639d5d1f200eab77aa6ee2250f013af",
       "math_nodes": 83,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": true
     },
     {
       "path": "science/model.md",
       "git_blob_sha": "c739943a00b5ce7b5f8d650267377100b4d63870",
       "math_nodes": 45,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     },
     {
       "path": "science/fixed_input.md",
       "git_blob_sha": "8fed784f5e02f782ac00c87c82dd9e921eba1115",
       "math_nodes": 31,
       "math_errors": 0,
-      "text_errors": []
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
+    },
+    {
+      "path": "science/interpretation.md",
+      "git_blob_sha": "3a76127bc42a0785f9bf4e3ef981d19443bd83b9",
+      "math_nodes": 58,
+      "math_errors": 0,
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
+    },
+    {
+      "path": "science/README.md",
+      "git_blob_sha": "58ebefe1b27b8eeefeda4dca2eb0abe4ed2cece0",
+      "math_nodes": 1,
+      "math_errors": 0,
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
+    },
+    {
+      "path": "references/RELATED_WORK.md",
+      "git_blob_sha": "859f04d65c79f3bb6bf76ff095aa1bdeb8d91bab",
+      "math_nodes": 14,
+      "math_errors": 0,
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
+    },
+    {
+      "path": "verification/README.md",
+      "git_blob_sha": "5c01633a6960b3140ad31a6b9e445bba46e86aa9",
+      "math_nodes": 13,
+      "math_errors": 0,
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
+    },
+    {
+      "path": "verification/SANITY_CHECK.md",
+      "git_blob_sha": "39aa0607c955fe74760e7a25c44e0dfe0ec80e39",
+      "math_nodes": 0,
+      "math_errors": 0,
+      "text_errors": [],
+      "exposed_dollars": 0,
+      "probability_regression": null
     }
   ]
 }
