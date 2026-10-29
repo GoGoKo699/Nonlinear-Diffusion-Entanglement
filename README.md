@@ -54,16 +54,23 @@ A single fixed, finitely squeezed two-mode squeezed vacuum also has NPT output a
 | What is inherited and what distinguishes this result? | [Primary-literature comparison](references/RELATED_WORK.md) |
 | How are the formulas and finite witnesses checked? | [Verification and reproducibility](verification/README.md) |
 
-The [science index](science/README.md) gives a connected proof route. An [LLM-oriented retrieval guide](llms.txt) points to each claim's authoritative home. The educational bridge and project-defined 30-milestone map are added after a single source is selected; none is assumed here.
+The [science index](science/README.md) gives a connected proof route. The [LLM-oriented retrieval guide](llms.txt) points to each claim's authoritative home.
+
+## Learn the project
+
+The single educational anchor is **Alexander S. Holevo, _Quantum Systems, Channels, Information: A Mathematical Introduction_, second revised and expanded edition (2019)**. The [learning entrypoint](learning/README.md) offers a route through the physical question before the full proofs.
+
+The [Holevo bridge](learning/HOLEVO_BRIDGE.md) identifies the relevant sections, translates covariance, channel and energy conventions, and supplies the steps from Gaussian theory to the nonlinear mixture. The [worked primer](learning/PRIMER.md) begins with an exactly solved two-qubit example, then develops the stochastic shear, sharp threshold and operational meaning. The [30-milestone map](learning/MILESTONES.md) contains 14 background and 16 narrative targets, with explicit dependencies and scientific sources. It is a common understanding map, not a personalized assessment record.
 
 ## Reproduce
 
 ```bash
 python3 -m pip install -r verification/requirements.txt
 python3 verification/run_checks.py
+python3 verification/check_learning.py
 ```
 
-The tests check the Mehler kernel, exact packet integrals, rigorous bounds, Gaussian-channel cutoff and Brownian quadratic-functional identities. Finite tests inspect algebra and numerical conventions; the universal statements rely on the written proofs. No Monte Carlo data are needed for the principal result.
+The scientific tests check the Mehler kernel, exact packet integrals, rigorous bounds, Gaussian-channel cutoff and Brownian quadratic-functional identities. The learning checks validate the map, local navigation and worked examples. Finite tests inspect algebra and numerical conventions; the universal statements rely on the written proofs. No Monte Carlo data are needed for the principal result. The [Sanity Check record](verification/SANITY_CHECK.md) states the checks actually completed and separates them from hosted visual rendering.
 
 ## Attribution and scope
 

@@ -216,7 +216,7 @@ Their logarithmic ratio therefore has the sign of the leading term
 
 If $`t<(2\sqrt{D\eta})^{-1}`$, the coefficient in square brackets is positive. This includes **every finite time** when $`\eta=0`$. Taking a sufficiently large but *finite* $`A`$ proves $`c_A>d_A`$ and hence NPT. Conversely, the pathwise Gaussian proof makes the channel EB already at equality $`t=(2\sqrt{D\eta})^{-1}`$. There is no unresolved endpoint interval. The argument also gives the exact PPT-inducing boundary, since the converse is specifically NPT.
 
-The dependence on $`\kappa>0`$ is essential: its positivity makes the off-diagonal harmonic kernel decay only linearly in large $`|y|`$, allowing rare high-momentum coherences. It is not legal to set $`\kappa=0`$ in the Mehler-based converse; that separate Gaussian model has a different threshold when $`\omega\ne0`$.
+The dependence on $`\kappa>0`$ is essential: its positivity makes the leading logarithmic decay of the off-diagonal harmonic kernel linear in large $`|y|`$, allowing rare high-momentum coherences. It is not legal to set $`\kappa=0`$ in the Mehler-based converse; that separate Gaussian model has a different threshold when $`\omega\ne0`$.
 
 ## 6. Independent finite-parameter checks and boundaries
 
