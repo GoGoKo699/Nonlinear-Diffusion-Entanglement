@@ -1,0 +1,237 @@
+{
+  "all_assertions_passed": true,
+  "checks": {
+    "bounds": {
+      "all_assertions_passed": true,
+      "brownian_laplace_tests": [
+        {
+          "abs_error": 3.3773164998668337e-07,
+          "delta": 0,
+          "exact": -0.016556945662650258,
+          "finite_spectral": -0.01655660793100027,
+          "s": 0.1
+        },
+        {
+          "abs_error": 3.377316499048044e-06,
+          "delta": 0,
+          "exact": -0.15678413451447387,
+          "finite_spectral": -0.15678075719797482,
+          "s": 1.0
+        },
+        {
+          "abs_error": 1.3509265994637865e-05,
+          "delta": 0,
+          "exact": -0.5460297837933088,
+          "finite_spectral": -0.5460162745273142,
+          "s": 4.0
+        },
+        {
+          "abs_error": 1.6886582498432112e-06,
+          "delta": 1.2,
+          "exact": -0.13527097433118374,
+          "finite_spectral": -0.1352692856729339,
+          "s": 0.5
+        },
+        {
+          "abs_error": 6.754632998262622e-06,
+          "delta": 0.7,
+          "exact": -0.35601952781794904,
+          "finite_spectral": -0.3560127731849508,
+          "s": 2.0
+        }
+      ],
+      "c_f_exact": 1.1732725848783554,
+      "c_f_integral": 1.1732725848783556,
+      "c_star": 0.02153222609588753,
+      "gaussian_threshold_t": 1.1122855515844319,
+      "weak_kinetic_noise": [
+        {
+          "kappa": 0.1,
+          "log_upper_bound": -0.04134246906453703,
+          "rate": 0.0028079533001919904
+        },
+        {
+          "kappa": 0.02,
+          "log_upper_bound": -0.15366060107221666,
+          "rate": 0.0028079533001919904
+        },
+        {
+          "kappa": 0.005,
+          "log_upper_bound": -0.5748535961010152,
+          "rate": 0.0028079533001919904
+        }
+      ]
+    },
+    "kernel": {
+      "all_assertions_passed": true,
+      "generator_residuals": [
+        {
+          "absolute_residual": 1.2559828964041678e-09,
+          "y": 0.8
+        },
+        {
+          "absolute_residual": 2.011311930879738e-09,
+          "y": -1.2
+        },
+        {
+          "absolute_residual": 1.1435297153639112e-09,
+          "y": 0.0
+        }
+      ],
+      "packet_reductions": [
+        {
+          "max_absolute_error": 5.551115123125783e-17,
+          "y": 0.0
+        },
+        {
+          "max_absolute_error": 2.77555761450245e-16,
+          "y": 0.05
+        },
+        {
+          "max_absolute_error": 2.77555761450245e-16,
+          "y": -0.05
+        },
+        {
+          "max_absolute_error": 5.551115123125783e-17,
+          "y": 0.8
+        },
+        {
+          "max_absolute_error": 5.551115123125783e-17,
+          "y": 2.0
+        }
+      ],
+      "semigroup_composition": [
+        {
+          "absolute_error": 3.3306690738754696e-16,
+          "y": 0.0
+        },
+        {
+          "absolute_error": 8.326672684688674e-17,
+          "y": 0.8
+        },
+        {
+          "absolute_error": 5.561946577567963e-17,
+          "y": -1.2
+        }
+      ]
+    },
+    "threshold": [
+      {
+        "A": 20,
+        "D": 2,
+        "cross_bound_valid": true,
+        "delta": 0.05,
+        "diagonal_bound_valid": true,
+        "elementary_certificate_NPT": true,
+        "eta": 0.125,
+        "integral_witness_NPT": true,
+        "kappa": 0.3,
+        "log_C": -116.94539679236773,
+        "log_cross_lower": -117.99049567133896,
+        "log_d": -402.89137245228306,
+        "log_diagonal_upper": -399.50062421972535,
+        "omega": 0.7,
+        "t": 0.5,
+        "t_EB": 1.0
+      },
+      {
+        "A": 20,
+        "D": 2,
+        "cross_bound_valid": true,
+        "delta": 0.05,
+        "diagonal_bound_valid": true,
+        "elementary_certificate_NPT": true,
+        "eta": 0.125,
+        "integral_witness_NPT": true,
+        "kappa": 0.3,
+        "log_C": -209.42131813935742,
+        "log_cross_lower": -210.76299264592086,
+        "log_d": -225.78789810859212,
+        "log_diagonal_upper": -222.0680083275503,
+        "omega": 0.7,
+        "t": 0.9,
+        "t_EB": 1.0
+      },
+      {
+        "A": 20,
+        "D": 2,
+        "cross_bound_valid": true,
+        "delta": 0.05,
+        "diagonal_bound_valid": true,
+        "elementary_certificate_NPT": false,
+        "eta": 0.125,
+        "integral_witness_NPT": false,
+        "kappa": 0.3,
+        "log_C": -232.53305359346152,
+        "log_cross_lower": -233.95611688956632,
+        "log_d": -203.65615288814905,
+        "log_diagonal_upper": -199.87507807620236,
+        "omega": 0.7,
+        "t": 1,
+        "t_EB": 1.0
+      },
+      {
+        "A": 20,
+        "D": 2,
+        "cross_bound_valid": true,
+        "delta": 0.05,
+        "diagonal_bound_valid": true,
+        "elementary_certificate_NPT": false,
+        "eta": 0.125,
+        "integral_witness_NPT": false,
+        "kappa": 0.3,
+        "log_C": -255.6418921804936,
+        "log_cross_lower": -257.14924113321183,
+        "log_d": -185.55204939829073,
+        "log_diagonal_upper": -181.71493469619531,
+        "omega": 0.7,
+        "t": 1.1,
+        "t_EB": 1.0
+      },
+      {
+        "A": 10,
+        "D": 1,
+        "cross_bound_valid": true,
+        "delta": 0.1,
+        "diagonal_bound_valid": true,
+        "elementary_certificate_NPT": true,
+        "eta": 1,
+        "integral_witness_NPT": true,
+        "kappa": 0.05,
+        "log_C": -165.572407499694,
+        "log_cross_lower": -173.46068450089044,
+        "log_d": -249.12144246602637,
+        "log_diagonal_upper": -246.91358024691357,
+        "omega": -2,
+        "t": 0.4,
+        "t_EB": 0.5
+      },
+      {
+        "A": 100,
+        "D": 1,
+        "cross_bound_valid": true,
+        "delta": 0.01,
+        "diagonal_bound_valid": true,
+        "elementary_certificate_NPT": true,
+        "eta": 0.25,
+        "integral_witness_NPT": true,
+        "kappa": 0.0001,
+        "log_C": -8248.766196640267,
+        "log_cross_lower": -9382.013043588911,
+        "log_d": -13337.252487034655,
+        "log_diagonal_upper": -13332.444503699753,
+        "omega": 1,
+        "t": 0.75,
+        "t_EB": 1.0
+      }
+    ]
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.13.5",
+    "scipy": "1.17.0"
+  },
+  "scope": "Finite consistency checks; analytical proofs are in science/.",
+  "started_at_utc": "2026-10-29T02:50:28.682321Z",
+  "status": "passed"
+}
