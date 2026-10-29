@@ -5,10 +5,10 @@
 The system Hilbert space is $`\mathcal H=L^2(\mathbb R)`$. The standard Schrödinger pair $`Q,P`$ obeys $`[Q,P]=iI`$ on a common core; $`H=P^2/2`$ is free kinetic energy. Fix $`D>0`$, $`\kappa>0`$, $`\eta\ge0`$, and $`\omega\in\mathbb R`$. In formal double-commutator notation,
 
 ```math
-\mathcal L=-i\omega\operatorname{ad}_{H}
--D\operatorname{ad}_{Q}^2
--\kappa\operatorname{ad}_{H}^2
--\eta\operatorname{ad}_{P}^2.
+\mathcal L=-i\omega\mathrm{ad}_{H}
+-D\mathrm{ad}_{Q}^2
+-\kappa\mathrm{ad}_{H}^2
+-\eta\mathrm{ad}_{P}^2.
 ```
 
 These coefficients are fixed and finite unless a limit is explicitly stated. **The channel is defined through a normal, trace-preserving random-unitary process**: independent standard real Brownian motions $`B,W,Z`$ multiply the self-adjoint generators $`H,Q,P`$ with Stratonovich increments
@@ -25,7 +25,7 @@ The stochastic environment is *not measured*. Random paths are not free classica
 
 ## Distances and exact loss of entanglement
 
-A channel $`\Phi`$ is **entanglement breaking (EB)** if $`(\Phi\otimes\operatorname{id}_R)(\rho_{SR})`$ is separable for every (possibly infinite-dimensional) reference $`R`$ and normal state. Separability means the trace-norm closed convex hull of product states. It is **PPT-inducing** if all such outputs are positive under reference partial transpose; EB implies PPT-inducing.
+A channel $`\Phi`$ is **entanglement breaking (EB)** if $`(\Phi\otimes\mathrm{id}_R)(\rho_{SR})`$ is separable for every (possibly infinite-dimensional) reference $`R`$ and normal state. Separability means the trace-norm closed convex hull of product states. It is **PPT-inducing** if all such outputs are positive under reference partial transpose; EB implies PPT-inducing.
 
 Define the energy-*unconstrained* operational distance
 

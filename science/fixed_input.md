@@ -24,7 +24,7 @@ Both subsystems have finite mean reference energy
 For **every finite** $`t>0`$, the normal output
 
 ```math
-(\Phi_t\otimes\operatorname{id}_R)
+(\Phi_t\otimes\mathrm{id}_R)
 (|\Omega_\lambda\rangle\langle\Omega_\lambda|)
 ```
 
@@ -35,7 +35,7 @@ is NPT. The *same* $`\lambda`$ and the *same input state* work for all finite ti
 By [the exact threshold theorem](exact_threshold.md), for each fixed finite $`t`$ some pure state $`|\Psi\rangle\in\mathcal H_S\otimes\mathbb C^2`$ has a bounded NPT witness $`W`$ such that
 
 ```math
-\operatorname{Tr}W(\Phi_t\otimes\operatorname{id}_2)
+\mathrm{Tr}W(\Phi_t\otimes\mathrm{id}_2)
 (|\Psi\rangle\langle\Psi|)<0.
 ```
 

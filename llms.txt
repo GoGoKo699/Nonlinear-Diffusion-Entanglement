@@ -1,25 +1,33 @@
-# Nonlinear Diffusion and Entanglement — scientific navigation
+# Nonlinear Diffusion and Entanglement
 
-Repository aim: understand exact versus operational disappearance of reference entanglement under a known non-Gaussian position/kinetic-dephasing channel.
+Overview and principal results: README.md
+Exact definitions, normal semigroup, resources and theorem contract: science/model.md
+Connected scientific route: science/README.md
+Conditional stochastic shear, Gaussian displacement covariance and Brownian transform: science/conditional_gaussian.md
+Exact EB/PPT threshold and finite-energy Gaussian-packet converse: science/exact_threshold.md
+Energy-unconstrained cubic upper and compact-packet lower bounds: science/cubic_distance.md
+Fixed finitely squeezed input and bounded-reference-filter proof: science/fixed_input.md
+Gaussian kappa=0 comparison, weak-kappa upper bound and logical-fidelity consequences: science/interpretation.md
+Primary-source attribution and closest-work comparison: references/RELATED_WORK.md
+Bibliographic records: references/references.bib
+Reproduction commands and evidence limits: verification/README.md
+Furnishing check scope and remaining verification limitations: verification/SANITY_CHECK.md
 
-- Overview, principal results and reproduction: README.md
-- Model and proper unbounded-semigroup definition: science/model.md
-- Connected scientific route and proof dependencies: science/README.md
-- Conditional Brownian Gaussian mixture, covariance and Laplace law: science/conditional_gaussian.md
-- Exact entanglement-breaking/PPT threshold and Gaussian-packet proof: science/exact_threshold.md
-- Uniform energy-unconstrained cubic upper bound and normalized compact-packet lower bound: science/cubic_distance.md
-- Fixed finite-energy two-mode squeezed input, qualitative NPT: science/fixed_input.md
-- Gaussian kappa=0 boundary, weak-kappa interpretation, fidelity statement and limitations: science/interpretation.md
-- Imported source model, Gaussian and Brownian facts, and portfolio distinction: references/RELATED_WORK.md
-- Bibliography metadata: references/references.bib
-- Commands, tested parameter cases and limits of finite evidence: verification/README.md
+Learning route:
+- Start: learning/README.md
+- Single educational anchor: Alexander S. Holevo, Quantum Systems, Channels, Information: A Mathematical Introduction, second revised and expanded edition (2019).
+- Verified source locations, conventions and missing steps: learning/HOLEVO_BRIDGE.md
+- Worked qubit example and physical route: learning/PRIMER.md
+- Exactly 30 learner-independent milestones: learning/MILESTONES.md (14 background, 16 narrative).
+- Map, link and finite-example checks: verification/check_learning.py
 
-Essential distinctions:
-1. D,kappa>0 and eta>=0 for the exact non-Gaussian threshold; do not substitute kappa=0 in its converse.
-2. Unconditional channel is non-Gaussian; conditioning on kinetic Brownian motion yields additive Gaussian noise plus a shear.
-3. EB at finite eta threshold and NPT below it are separate proof directions.
-4. For eta=0, the whole channel approaches EB at log-distance Theta(D² kappa t³) while remaining non-PPT for all finite times.
-5. Upper and lower cubic coefficients do not match. All-NPT conclusions are weaker than a quantum-capacity or practical-memory guarantee.
-6. The model and Mehler propagator come from Speed–Lyu–Schubert. Gaussian EB criterion is inherited Holevo/Riedel material.
-
-Educational-anchor selection and a 30-milestone learner-independent map are later furnishing tasks. No personalized challenge procedure, learner assessment or user-specific study record belongs here.
+Preserve these distinctions:
+1. D,kappa>0 and eta>=0 in the exact nonlinear theorem. The kappa=0 Gaussian case has a separate proof.
+2. The total channel is non-Gaussian; conditioning yields Gaussian components but supplies no observed environmental record to a decoder.
+3. Pathwise Gaussian EB sufficiency does not prove mixture-level sharpness. The NPT packet converse is essential.
+4. The norm upper bound is uniform over all input energies and references; a selected-input calculation is not such a bound.
+5. Cubic logarithmic order is matched, not the leading coefficient. The sufficient packet energy grows with time.
+6. A fixed finite-energy squeezed input gives qualitative NPT, not a quantitative capacity or useful memory guarantee.
+7. Q-generated noise diffuses momentum; P-generated eta noise diffuses position. H=P²/2 is not the preparation-cost operator (Q²+P²)/2.
+8. The model and Mehler propagator are inherited from Speed–Lyu–Schubert; Gaussian EB theory is inherited. The primer's qubit example is not a new contribution.
+9. Holevo is the only educational anchor. Primary research citations support attribution and proofs, not additional reading prerequisites.
