@@ -82,7 +82,8 @@ def main():
                         raise RuntimeError(f'Rendering failed: {path}; errors={text_errors}; exposed dollars={exposed_dollars}')
                     regression_ok = None
                     if path == 'science/cubic_distance.md':
-                        equations = article.locator('mjx-container').all_text_contents()
+                        # GitHub may emit native MathML rather than a MathJax container.
+                        equations = article.locator('mjx-container, .katex, math').all_text_contents()
                         regression_ok = any('Pr' in re.sub(r'\s+', '', s) and s.count('<') >= 2 and '≤' in s for s in equations)
                         if not regression_ok:
                             raise RuntimeError('Probability comparison lost operators in hosted rendering')
