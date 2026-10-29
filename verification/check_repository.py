@@ -17,6 +17,14 @@ def anchors(text):
     return found
 
 
+def link_prose(text):
+    # Math and code may contain [A](rho), which is not a Markdown link.
+    text = re.sub(r"```.*?```", "", text, flags=re.S)
+    text = re.sub(r"`[^`]*`", "", text)
+    text = re.sub(r"\$\$.*?\$\$", "", text, flags=re.S)
+    return re.sub(r"(?<!\\)\$[^\n$]*?(?<!\\)\$", "", text)
+
+
 def run_checks():
     milestone_path = ROOT/'learning/MILESTONES.md'
     text = milestone_path.read_text(encoding='utf-8')
@@ -49,13 +57,14 @@ def run_checks():
     assert not (ROOT/'manuscript/main.md').exists()
     assert not (ROOT/'COACHING.md').exists()
     assert 'Direct momentum diffusion restores' not in (ROOT/'README.md').read_text()
+    assert link_prose(r'$\mathcal D[A](\rho)$ [model](science/model.md)').strip() == '[model](science/model.md)'
     checked = 0
     documents = sorted(p for p in ROOT.rglob('*.md')
                        if '.git' not in p.parts and 'local_results' not in p.parts)
     for document in documents:
         contents = document.read_text(encoding='utf-8')
         assert contents.count('```') % 2 == 0, f'Unpaired fence in {document}'
-        for link in re.findall(r'\[[^\]\n]*\]\(([^\s)]+)\)', contents):
+        for link in re.findall(r'\[[^\]\n]*\]\(([^\s)]+)\)', link_prose(contents)):
             parsed = urlsplit(link)
             if parsed.scheme or parsed.netloc:
                 continue
