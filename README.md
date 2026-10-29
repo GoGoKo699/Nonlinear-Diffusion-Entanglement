@@ -1,6 +1,6 @@
 # Nonlinear Diffusion and Entanglement
 
-**Quadratic stochastic motion can prevent exact entanglement death while an entire continuous-variable quantum channel approaches measure-and-prepare dynamics exponentially fast.** Direct momentum diffusion restores a sharp finite-time entanglement-breaking boundary.
+**Quadratic stochastic motion can prevent exact entanglement death while an entire continuous-variable quantum channel approaches measure-and-prepare dynamics exponentially fast.** Direct position diffusion restores a sharp finite-time entanglement-breaking boundary.
 
 Consider one free canonical degree of freedom with $[Q,P]=i$, $H=P^2/2$, and the normal random-unitary semigroup whose formal generator is
 
@@ -9,6 +9,8 @@ $$
 -\kappa[H,[H,\rho]]-\eta[P,[P,\rho]],
 \qquad D,\kappa>0,\quad\eta\ge0.
 $$
+
+The $D$ term causes position dephasing and momentum diffusion; the $\eta$ term causes momentum dephasing and position diffusion. The quadratic noise makes the free-motion shear stochastic. The evolution remains linear in the density operator.
 
 ## Results
 
@@ -48,12 +50,18 @@ For $\eta=0$, a single fixed **finite-energy two-mode squeezed vacuum** is also 
 | Why do stochastic quadratic shears produce conditional Gaussian channels? | [Conditional representation](science/conditional_gaussian.md) |
 | Why is the exact EB time sharp? | [Pathwise upper bound and finite-energy NPT converse](science/exact_threshold.md) |
 | Why cubic decay in an all-input channel norm? | [Brownian upper and compact-packet lower](science/cubic_distance.md) |
-| Can a fixed low-energy input retain entanglement? | [Faithful-state corollary](science/fixed_input.md) |
+| Can a fixed finite-energy input retain entanglement? | [Faithful-state corollary](science/fixed_input.md) |
 | What changes at zero quadratic dephasing? | [Gaussian limit and operational limits](science/interpretation.md) |
 | Which ingredients were already known? | [Primary sources and novelty comparison](references/RELATED_WORK.md) |
 | How to check formulas and sample witnesses? | [Verification](verification/README.md) |
 
-The [science index](science/README.md) connects the argument. The [LLM reading map](llms.txt) points to authoritative topic pages. A single educational anchor and an exactly 30-milestone map will be integrated in the subsequent furnishing stage, after the anchor choice.
+The [science index](science/README.md) connects the argument. The [LLM reading map](llms.txt) points to authoritative topic pages.
+
+## Learn the project
+
+The single educational anchor is **Ángel Rivas and Susana F. Huelga, _Open Quantum Systems: An Introduction_ (2012)**. Start with the [learning primer and complete qubit example](learning/README.md), then follow the [30-milestone understanding map](learning/MILESTONES.md): **12 background/preliminaries milestones and 18 narrative/innovation milestones**.
+
+The [Rivas–Huelga source bridge](learning/RIVAS_HUELGA_BRIDGE.md) maps verified book chapters to the freely available author version, translates rates and quadrature conventions, and supplies the missing continuous-variable, stochastic and reference-assisted arguments. It explicitly separates the source's finite-dimensional generator foundations from this project's unbounded-operator channel construction. The shared learning route does not replace the exact proofs or require reading the whole book.
 
 ## Reproduce
 
@@ -64,7 +72,7 @@ python3 -m pip install -r verification/requirements.txt
 python3 verification/run_checks.py
 ```
 
-They test the analytical packet integrals, rigorous inequalities, Brownian Laplace product and Gaussian determinant. Finite tests do **not** prove all-time statements or certify hosted equation rendering.
+The runner checks analytical packet integrals, rigorous inequalities, the Brownian Laplace product, Gaussian determinants, learning examples, milestone dependencies and local links. It writes a fresh success or failure manifest under `verification/local_results/`. The [verification guide](verification/README.md) distinguishes these checks from the written proofs and the separate inspection of actual hosted equations.
 
 ## Scope and attribution
 

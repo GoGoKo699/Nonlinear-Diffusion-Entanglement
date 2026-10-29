@@ -1,27 +1,48 @@
-# Verification and reproducibility
+# Verification and reproduction
 
-The canonical analytical arguments are in [science](../science/README.md). The suite checks *finite* exact packet integrals, their elementary inequalities, the Gaussian determinant and the Brownian spectral/Laplace formula. Passing scripts are not proofs of all-time statements or an assessment of novelty.
+[Project](../README.md) · [Scientific statements](../science/model.md) · [Learning route](../learning/README.md)
 
-## Commands
+The analytical proofs in `science/` establish the universal and asymptotic claims. The programs here test selected finite cases, normalizations, constants and the consistency of the learning route. Successful computation is not independent proof certification, an exhaustive novelty review or evidence of a practical quantum-memory advantage.
 
-Tested using Python 3.12+ with the pinned dependencies in this repository:
+## Numerical and structural checks
+
+With Python 3.12 and the pinned NumPy/SciPy versions:
 
 ```bash
-python3 -m pip install -r verification/requirements.txt
-python3 verification/run_checks.py
+python3 -m venv .venv
+.venv/bin/python -m pip install -r verification/requirements.txt
+.venv/bin/python verification/run_checks.py
 ```
 
-The runner exits nonzero upon any failed assertion, prints JSON on a passing run, and requires neither a network request nor external data or randomized sampling. [Recorded reference values](reference_results.json) identify the tested finite regime.
+The runner executes four modules and prints its complete JSON report. Fresh reports are written to the ignored directory `verification/local_results/`. Before importing the checks it atomically replaces `checks.json` with `status: running` and `all_assertions_passed: false`. Each completed module updates that report. A failure records the active module and exception and exits unsuccessfully; interruption cannot leave an earlier passing report masquerading as the current run. Only `status: passed` together with `all_assertions_passed: true` denotes a complete run.
 
-## Checks
-
-| Check | What it tests | What it does not prove |
+| Module | What is checked | What is not established |
 |---|---|---|
-| `check_threshold.py` | Mehler/Gaussian-packet one-dimensional integrals in log arithmetic; upper diagonal and lower coherence inequalities; NPT signs at six fixed parameter points | NPT at all pre-threshold times or EB at the endpoint |
-| `check_bounds.py` | Exact cosine autocorrelation integral, Brownian Laplace expression versus a 30,000-mode product, deterministic Gaussian covariance and threshold, analytic positivity of cubic lower constant | Sharp exponent coefficient, capacity, general perturbation theory |
+| [check_threshold.py](check_threshold.py) | Six positive-kappa Gaussian-packet cases: independently evaluated coherence and diagonal integrals, their analytical bounds and expected witness signs | Universal sharpness, the endpoint, optimal witness energy |
+| [check_bounds.py](check_bounds.py) | Cosine-packet overlap integral and constant, five finite spectral Laplace comparisons, Gaussian determinants, Gaussian cutoff and nine packet-parameter inequality cases | Optimal cubic coefficient, full diamond-distance computation |
+| [check_learning.py](check_learning.py) | Qubit generator/Bell-state example, three deterministic covariance examples, rate rescaling, Brownian trace, packet moments, squeezed-state energy and bounded finite-rank filtering | The infinite-dimensional theorem from finite truncations |
+| [check_repository.py](check_repository.py) | Exactly M01–M30, 12/18 phase split, required target fields, backward-only dependencies, local file/section links, source bridge routes and topic-based science | Scientific truth, external-link availability, actual hosted mathematical rendering |
 
-For $D=2,\kappa=0.3,\eta=0.125,\omega=0.7$ the theorem predicts $t_{\rm EB}=1$. With $A=20,\delta=0.05$ the finite witness is NPT at $t=0.5$ and $0.9$ and not NPT at $t=1$ and $1.1$. Additional checks use negative drift and very small positive $\kappa$; all tested inequality directions pass.
+For the threshold cases, the expected NPT-sign pattern is `true, true, false, false, true, true`. The two nonnegative tested witnesses at or above the threshold are consistent checks, not independent proofs of EB. The exact overlap constant is `2/3 + 5/pi**2`, and the cubic lower-bound constant evaluates to approximately `0.02153222609588753`.
 
-The Gaussian packet numerics use Gaussian quadrature, log sums and a stable small-$|y|$ expansion; their very small numbers must not be rounded to zero before comparing signs. The Brownian spectral expansion has a controlled finite truncation discrepancy and checks the exact formula with a tolerance, without fitting any exponent.
+The committed [reference_results.json](reference_results.json) records the earlier research-stage summary. It is not a fresh-run manifest and does not include the later learning/structure checks. Compare a new run's actual outputs rather than treating this historical reference as evidence that the new code executed.
 
-Analytical proof of the general EB threshold is in [exact_threshold.md](../science/exact_threshold.md); the all-reference cubic upper and normalized packet lower are in [cubic_distance.md](../science/cubic_distance.md). We did not measure a physical device, infer an unconstrained capacity, independently verify every claim with a second experimental apparatus or certify hosted Markdown rendering through these numerical tests. Hosted math rendering belongs to the later automatic furnishing/Sanity Check.
+## Actual hosted-rendering check
+
+Source syntax and numerical success do not establish how GitHub displays equations. The separate [check_hosted.py](check_hosted.py) opens the **actual public GitHub pages at a full commit SHA**, waits for rendered math, rejects rendering-error nodes and records screenshots, page text and a page-by-page manifest.
+
+```bash
+.venv/bin/python -m pip install -r verification/requirements-render.txt
+.venv/bin/python -m playwright install --with-deps chromium
+SOURCE_REF="$(git rev-parse HEAD)" .venv/bin/python verification/check_hosted.py
+```
+
+This check requires network access to GitHub and a compatible Chromium runtime. It inspects the README, learning primer, source bridge, milestone map and three mathematical proof pages. Evidence is written under `verification/local_results/hosted/`. The automated DOM checks detect missing math and reported rendering errors; screenshots must also be inspected for visual readability, clipping and table layout. An unavailable hosted check remains a presentation-verification gap, not a successful local preview.
+
+The workflow in `.github/workflows/verify.yml` runs the numerical/structural checks and the hosted-page capture for pull requests and main. It records the tested head SHA and uploads fresh reports, screenshots and an exact `git archive` of that source. Artifacts expire after seven days; durable findings and any required retained evidence belong in the final verification record, not solely in an expiring download link.
+
+## Scientific sanity boundaries
+
+The central consistency checks must retain the same conventions throughout the README, model, proofs and learning route: $[Q,P]=i$, $H=P^2/2$, positive $D,\kappa$, nonnegative $\eta$, vacuum covariance $I/2$, added Gaussian covariance threshold $\sqrt{\det V}=1$, and **half** diamond distance. The $\eta$ noise is momentum dephasing/position diffusion; the $D$ noise is position dephasing/momentum diffusion.
+
+The sharp theorem includes the finite EB endpoint and proves NPT strictly below it. The cubic law concerns $\eta=0$ and fixed rates, and its leading exponent constant is not optimized. A fixed finitely squeezed input gives qualitative NPT, while the quantitative compact-packet construction has a growing sufficient preparation cost. None of these claims establishes positive quantum capacity or useful storage. Full source attribution remains in [related work](../references/RELATED_WORK.md).
