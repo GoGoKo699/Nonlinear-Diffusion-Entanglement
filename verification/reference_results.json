@@ -1,0 +1,46 @@
+{
+  "tested_on": "2026-10-29",
+  "toolchain": {
+    "python": "3.12+",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "status": "passed",
+  "numerical_scope": "finite formula consistency, not analytical proof",
+  "exact_gaussian_threshold_case": {
+    "D": 2,
+    "kappa": 0.3,
+    "eta": 0.125,
+    "omega": 0.7,
+    "t_EB": 1
+  },
+  "tested_times": [
+    0.5,
+    0.9,
+    1,
+    1.1
+  ],
+  "packet_A": 20,
+  "packet_delta": 0.05,
+  "NPT_witness": [
+    true,
+    true,
+    false,
+    false
+  ],
+  "coherence_logs": [
+    -116.94539679236773,
+    -209.42131813935742,
+    -232.53305359346152,
+    -255.6418921804936
+  ],
+  "diagonal_logs": [
+    -402.89137245228306,
+    -225.78789810859212,
+    -203.65615288814905,
+    -185.55204939829073
+  ],
+  "c_f": 1.1732725848783554,
+  "c_star": 0.02153222609588753,
+  "all_assertions_passed": true
+}
