@@ -16,7 +16,7 @@ S_s=\omega s+\sqrt{2\kappa}\,B_s,
 The shear identity is $`U_{S_s}^{\dagger}QU_{S_s}=Q+S_sP`$. For a fixed continuous $`S`$ path, passing to the interaction picture leaves linear stochastic Hamiltonians $`\sqrt{2D}(Q+S_sP)\circ dW_s`$ and $`\sqrt{2\eta}P\circ dZ_s`$. Their mutual commutators are scalar. Their time ordering changes a global phase but has no effect on density-operator conjugation. Thus the conditional channel takes the exact form
 
 ```math
-\Phi_t^{(S)}=\operatorname{Ad}_{U_{S_t}}\circ\mathcal N_{V_S},
+\Phi_t^{(S)}=\mathrm{Ad}_{U_{S_t}}\circ\mathcal N_{V_S},
 ```
 
 where $`\mathcal N_V`$ adds centered phase-space Gaussian displacements with covariance $`V`$. In the ordered quadratures $`(Q,P)`$,

@@ -7,9 +7,9 @@
 For a single continuous-variable system with $`[Q,P]=i`$ and the normal random-unitary semigroup
 
 ```math
-\mathcal L=-i\omega\operatorname{ad}_{P^2/2}
--D\operatorname{ad}_Q^2-\kappa\operatorname{ad}_{P^2/2}^2
--\eta\operatorname{ad}_P^2,
+\mathcal L=-i\omega\mathrm{ad}_{P^2/2}
+-D\mathrm{ad}_Q^2-\kappa\mathrm{ad}_{P^2/2}^2
+-\eta\mathrm{ad}_P^2,
 \quad D,\kappa>0,\ \eta\ge0,\ \omega\in\mathbb R,
 ```
 
@@ -72,7 +72,7 @@ K_y^{\omega,\eta}(t;s,r)=\;&K_y^0(t;s,r)
 \exp[-\eta ty^2]\\
 &\times\exp\left[-\frac{\omega^2}{4\kappa}
 \left(t-\frac{\tanh(bt)}b\right)\right]\\
-&\times\exp\left[-i\frac{\omega\operatorname{sgn}(y)}{2\sqrt{D\kappa}}
+&\times\exp\left[-i\frac{\omega\mathrm{sgn}(y)}{2\sqrt{D\kappa}}
 (s+r)\tanh(bt)\right].
 \end{aligned}
 ```
@@ -117,9 +117,9 @@ d_A&=\langle f_+|\Phi_t(|f_-\rangle\langle f_-|)|f_+\rangle.
 The opposite diagonal term is equal to $`d_A`$ by parity covariance, and the off-diagonal term has real positive value by the Gaussian integrations below. The partial transpose on the reference obeys
 
 ```math
-\langle v|[(\Phi_t\otimes\operatorname{id}_2)
+\langle v|[(\Phi_t\otimes\mathrm{id}_2)
 (|\Psi\rangle\langle\Psi|)]^{\Gamma_R}|v\rangle
-=\frac{d_A-\operatorname{Re}c_A}{2}.
+=\frac{d_A-\mathrm{Re}\,c_A}{2}.
 ```
 
 Thus $`c_A>d_A`$ exhibits NPT and excludes every EB/PPT-inducing description at that time.

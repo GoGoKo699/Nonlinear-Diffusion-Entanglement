@@ -28,7 +28,7 @@ It compares the noisy channel with the best EB comparator, allowing arbitrary in
 
 ## 2. A complete two-level example
 
-First consider a qubit, only as a teaching model. Let $Z=\operatorname{diag}(1,-1)$ and let its noise generator be $-\gamma[Z,[Z,\rho]]$, with $\gamma>0$. Diagonal entries do not change. An off-diagonal entry connects eigenvalues differing by two, so it is multiplied by
+First consider a qubit, only as a teaching model. Let $Z=\mathrm{diag}(1,-1)$ and let its noise generator be $-\gamma[Z,[Z,\rho]]$, with $\gamma>0$. Diagonal entries do not change. An off-diagonal entry connects eigenvalues differing by two, so it is multiplied by
 
 ```math
 q(t)=e^{-4\gamma t}.

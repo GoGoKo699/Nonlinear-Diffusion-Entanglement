@@ -9,7 +9,10 @@ from playwright.sync_api import sync_playwright
 REPOSITORY = 'GoGoKo699/Nonlinear-Diffusion-Entanglement'
 PAGES = ['README.md', 'learning/README.md', 'learning/RIVAS_HUELGA_BRIDGE.md',
          'learning/MILESTONES.md', 'science/conditional_gaussian.md',
-         'science/exact_threshold.md', 'science/cubic_distance.md']
+         'science/exact_threshold.md', 'science/cubic_distance.md',
+         'science/model.md', 'science/fixed_input.md']
+ERROR_TEXT = re.compile(r'the following macros are not allowed|unable to render rich display|'
+                        r'undefined control sequence|math processing error|parseerror', re.I)
 
 
 def main():
@@ -38,18 +41,22 @@ def main():
                         raise RuntimeError(f'Hosted page unavailable: {url}')
                     article = page.locator('.markdown-body').first
                     article.wait_for(state='visible', timeout=45000)
-                    # Playwright locators include open shadow roots used by math renderers.
+                    # Locators include the open shadow roots used by math renderers.
                     article.locator('mjx-container, .katex, math').first.wait_for(state='attached', timeout=45000)
-                    article.screenshot(path=str(output/f'{index:02}.png'), timeout=60000)
+                    page.evaluate('window.scrollTo(0, 0)')
+                    page.screenshot(path=str(output/f'{index:02}.png'), full_page=True, timeout=60000)
                     text = article.inner_text()
                     (output/f'{index:02}.txt').write_text(text, encoding='utf-8')
                     errors = article.locator('mjx-merror, .katex-error, [data-mjx-error]').count()
                     math_count = article.locator('mjx-container, .katex, math').count()
-                    if errors or not math_count:
-                        raise RuntimeError(f'Math rendering check failed: {path}')
-                    report['pages'].append({'path': path, 'url': url, 'math_nodes': math_count,
-                                            'math_errors': errors, 'screenshot': f'{index:02}.png'})
+                    messages = ERROR_TEXT.findall(text)
+                    record = {'path': path, 'url': url, 'math_nodes': math_count,
+                              'math_errors': errors, 'visible_error_messages': messages,
+                              'screenshot': f'{index:02}.png'}
+                    report['pages'].append(record)
                     save()
+                    if errors or messages or not math_count:
+                        raise RuntimeError(f'Math rendering check failed: {path}; {messages}')
                 except BaseException:
                     (output/f'{index:02}-failure.html').write_text(page.content(), encoding='utf-8')
                     page.screenshot(path=str(output/f'{index:02}-failure.png'), full_page=True)

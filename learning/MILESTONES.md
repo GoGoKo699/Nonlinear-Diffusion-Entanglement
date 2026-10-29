@@ -220,7 +220,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Question:** Which two matrix elements determine the negative partial-transpose expectation?
 
-**Target:** Explain $c_A$, $d_A$ and the witness value $(d_A-\operatorname{Re}c_A)/2$, including the role of parity covariance.
+**Target:** Explain $c_A$, $d_A$ and the witness value $(d_A-\mathrm{Re}\,c_A)/2$, including the role of parity covariance.
 
 **Dependencies:** M10, M16, M17. This turns the existence question into a testable inequality.
 

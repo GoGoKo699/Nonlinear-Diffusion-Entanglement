@@ -113,14 +113,14 @@ C_t&=\langle f_+|\Phi_t(|f_+\rangle\langle f_-|)|f_-\rangle.
 Parity symmetry and the reference partial transpose give
 
 ```math
-\operatorname{Tr}(W\Sigma_t)=\tfrac12(D_t-\operatorname{Re}C_t),
-\qquad \Sigma_t=(\Phi_t\otimes\operatorname{id})(|\Psi\rangle\langle\Psi|).
+\mathrm{Tr}(W\Sigma_t)=\tfrac12(D_t-\mathrm{Re}\,C_t),
+\qquad \Sigma_t=(\Phi_t\otimes\mathrm{id})(|\Psi\rangle\langle\Psi|).
 ```
 
 Consequently
 
 ```math
-e(t)\ge\tfrac12(\operatorname{Re}C_t-D_t).
+e(t)\ge\tfrac12(\mathrm{Re}\,C_t-D_t).
 ```
 
 This is a lower bound on the *same* half-diamond distance as in the uniform upper proof. It does not rely on a nonnormal infinitely squeezed Choi state.
@@ -161,14 +161,14 @@ For the diagonal transition, output and input momentum centers are separated by 
 For the coherence, the input and output kernel centers stay within $`w`$ of zero, while its momentum difference satisfies $`2a-2w\le |y|\le2a+2w`$. Using $`\sinh(2|y|t)\le e^{2|y|t}/2`$, the Mehler exponent identity
 
 ```math
-\coth(2z)+\operatorname{csch}(2z)=\coth z,
+\coth(2z)+\mathrm{csch}(2z)=\coth z,
 ```
 
 and bounding the drift phase by $`|\omega|w`$, one obtains, provided $`|\omega|w<\pi/2`$,
 
 ```math
 \boxed{\begin{aligned}
-\operatorname{Re}C_t\ge{}&J_w\cos(|\omega|w)
+\mathrm{Re}\,C_t\ge{}&J_w\cos(|\omega|w)
 \sqrt{\frac{2a-2w}{\pi}}\\
 &\times\exp\left[-(2a+2w)t-
 \frac{\omega^2t}{4}
