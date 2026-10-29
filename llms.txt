@@ -1,0 +1,22 @@
+# Nonlinear Diffusion and Entanglement — scientific retrieval map
+
+Overview and principal results: README.md
+Precise Hilbert-space model, resources and theorem contract: science/model.md
+Connected proof route: science/README.md
+Stochastic quadratic shear, Brownian Gram determinant, Gaussian mixture: science/conditional_gaussian.md
+Sharp EB/PPT threshold, normalized Gaussian packet and Mehler integral: science/exact_threshold.md
+Cubic upper/lower bounds with energy-unconstrained diamond norm: science/cubic_distance.md
+One fixed finite-energy TMSV qualitative NPT survival: science/fixed_input.md
+Gaussian kappa=0 comparison, weak-kappa upper and capacity cautions: science/interpretation.md
+Primary-source attribution and internal project comparison: references/RELATED_WORK.md
+Reproduction commands, checked cases and limits: verification/README.md
+
+Critical distinctions:
+- The full channel is non-Gaussian for kappa>0; only its conditioned paths are Gaussian.
+- The exact threshold includes the eta>0 endpoint; NPT is proved separately below it.
+- The kappa=0 Gaussian case is a distinct proof and can have a finite cutoff.
+- The cubic rate is an all-input bound; exponent constants do not match, so do not assert a sharp coefficient.
+- Fixed TMSV NPT does not imply useful memory, positive quantum capacity or finite-error recovery.
+- The model and Mehler propagator belong to Speed–Lyu–Schubert. The Gaussian EB criterion belongs to Holevo/Riedel's framework.
+
+A common 30-milestone map and one educational anchor will be integrated after source selection. Personal coaching contracts, learner attempts, answers and user-specific history are not repository material.
