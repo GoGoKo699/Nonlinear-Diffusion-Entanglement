@@ -1,22 +1,25 @@
-# Nonlinear Diffusion and Entanglement — scientific retrieval map
+# Nonlinear Diffusion and Entanglement — scientific navigation
 
-Overview and principal results: README.md
-Precise Hilbert-space model, resources and theorem contract: science/model.md
-Connected proof route: science/README.md
-Stochastic quadratic shear, Brownian Gram determinant, Gaussian mixture: science/conditional_gaussian.md
-Sharp EB/PPT threshold, normalized Gaussian packet and Mehler integral: science/exact_threshold.md
-Cubic upper/lower bounds with energy-unconstrained diamond norm: science/cubic_distance.md
-One fixed finite-energy TMSV qualitative NPT survival: science/fixed_input.md
-Gaussian kappa=0 comparison, weak-kappa upper and capacity cautions: science/interpretation.md
-Primary-source attribution and internal project comparison: references/RELATED_WORK.md
-Reproduction commands, checked cases and limits: verification/README.md
+Repository aim: understand exact versus operational disappearance of reference entanglement under a known non-Gaussian position/kinetic-dephasing channel.
 
-Critical distinctions:
-- The full channel is non-Gaussian for kappa>0; only its conditioned paths are Gaussian.
-- The exact threshold includes the eta>0 endpoint; NPT is proved separately below it.
-- The kappa=0 Gaussian case is a distinct proof and can have a finite cutoff.
-- The cubic rate is an all-input bound; exponent constants do not match, so do not assert a sharp coefficient.
-- Fixed TMSV NPT does not imply useful memory, positive quantum capacity or finite-error recovery.
-- The model and Mehler propagator belong to Speed–Lyu–Schubert. The Gaussian EB criterion belongs to Holevo/Riedel's framework.
+- Overview, principal results and reproduction: README.md
+- Model and proper unbounded-semigroup definition: science/model.md
+- Connected scientific route and proof dependencies: science/README.md
+- Conditional Brownian Gaussian mixture, covariance and Laplace law: science/conditional_gaussian.md
+- Exact entanglement-breaking/PPT threshold and Gaussian-packet proof: science/exact_threshold.md
+- Uniform energy-unconstrained cubic upper bound and normalized compact-packet lower bound: science/cubic_distance.md
+- Fixed finite-energy two-mode squeezed input, qualitative NPT: science/fixed_input.md
+- Gaussian kappa=0 boundary, weak-kappa interpretation, fidelity statement and limitations: science/interpretation.md
+- Imported source model, Gaussian and Brownian facts, and portfolio distinction: references/RELATED_WORK.md
+- Bibliography metadata: references/references.bib
+- Commands, tested parameter cases and limits of finite evidence: verification/README.md
 
-A common 30-milestone map and one educational anchor will be integrated after source selection. Personal coaching contracts, learner attempts, answers and user-specific history are not repository material.
+Essential distinctions:
+1. D,kappa>0 and eta>=0 for the exact non-Gaussian threshold; do not substitute kappa=0 in its converse.
+2. Unconditional channel is non-Gaussian; conditioning on kinetic Brownian motion yields additive Gaussian noise plus a shear.
+3. EB at finite eta threshold and NPT below it are separate proof directions.
+4. For eta=0, the whole channel approaches EB at log-distance Theta(D² kappa t³) while remaining non-PPT for all finite times.
+5. Upper and lower cubic coefficients do not match. All-NPT conclusions are weaker than a quantum-capacity or practical-memory guarantee.
+6. The model and Mehler propagator come from Speed–Lyu–Schubert. Gaussian EB criterion is inherited Holevo/Riedel material.
+
+Educational-anchor selection and a 30-milestone learner-independent map are later furnishing tasks. No personalized challenge procedure, learner assessment or user-specific study record belongs here.

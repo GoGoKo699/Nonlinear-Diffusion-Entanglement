@@ -1,56 +1,66 @@
-# A fixed finite-energy entangled input that remains NPT
+# One fixed, finitely squeezed entangled input survives qualitatively
 
-[Exact non-PPT theorem](exact_threshold.md) · [Cubic channel bound](cubic_distance.md)
+[Model](model.md) · [Exact threshold](exact_threshold.md) · [Operational bounds](cubic_distance.md)
 
-The growing high-momentum packets in the quantitative lower bound are **not** necessary merely to retain nonzero NPT entanglement. Standard faithful-state filtering gives a single *fixed* two-mode squeezed input whose output remains NPT at every finite time. This adds a useful quantifier, not a new memory mechanism.
+The explicit high-momentum witnesses in the exact-threshold and cubic-distance proofs require input parameters depending on the time. That does **not** mean that a growing mean-energy budget is required merely to retain *some* NPT entanglement. A single fixed, full-Schmidt-rank, finite-energy input works at every finite time; this is a consequence of standard faithful-state filtering rather than a new dynamical mechanism.
 
 ## Statement
 
-Assume $D,\kappa>0$, $\eta=0$ and finite real $\omega$. Fix any $0<\lambda<1$, independently of time, and define the two-mode squeezed vacuum relative to the oscillator number basis of $H_{\rm ref}=(Q^2+P^2)/2=N+1/2$:
+Assume $`D,\kappa>0`$, $`\eta=0`$, and finite real $`\omega`$. Fix **any** $`0<\lambda<1`$ and define the two-mode squeezed vacuum in the number basis of $`H_{\rm ref}=(Q^2+P^2)/2=N+1/2`$:
 
-$$
-|\Omega_\lambda\rangle=\sqrt{1-\lambda^2}
-\sum_{n=0}^\infty\lambda^n|n\rangle_S|n\rangle_R.
-$$
+```math
+|\Omega_\lambda\rangle
+=\sqrt{1-\lambda^2}\sum_{n=0}^\infty
+\lambda^n|n\rangle_S|n\rangle_R.
+```
 
-Each subsystem has finite mean reference energy
+Both subsystems have finite mean reference energy
 
-$$
-\langle H_{\rm ref}\rangle=\frac12+\frac{\lambda^2}{1-\lambda^2}.
-$$
+```math
+\langle H_{\rm ref}\rangle
+=\frac12+\frac{\lambda^2}{1-\lambda^2}<\infty.
+```
 
-**For every finite $t>0$,** the output
-$(\Phi_t\otimes\mathrm{id}_R)(|\Omega_\lambda\rangle\langle\Omega_\lambda|)$ is NPT. The **same input** works for every finite $t$, at every chosen positive $D,\kappa$ and finite $\omega$.
+For **every finite** $`t>0`$, the normal output
 
-## Bounded local-filter proof
+```math
+(\Phi_t\otimes\operatorname{id}_R)
+(|\Omega_\lambda\rangle\langle\Omega_\lambda|)
+```
 
-Fix $t>0$. By [the sharp threshold theorem](exact_threshold.md), some normal pure input $|\Psi\rangle\in\mathcal H_S\otimes\mathbb C^2$ has output with a negative bounded partial-transpose witness $W$. Write
+is NPT. The *same* $`\lambda`$ and the *same input state* work for all finite times. This is a qualitative statement with no fixed lower bound on output negativity, postselection probability, quantum capacity or usable recovery fidelity.
 
-$$|\Psi\rangle=\sum_{n\ge0}|n\rangle_S|a_n\rangle_{\mathbb C^2}.$$
+## Bounded reference-filter proof
 
-Let $P_M=\sum_{n=0}^M|n\rangle\langle n|$ and normalize
-$|\Psi_M\rangle\propto(P_M\otimes I)|\Psi\rangle$. These states converge in trace norm to $|\Psi\rangle$. By channel trace-norm contractivity and boundedness of $W$, for sufficiently large finite $M$ their outputs are also NPT.
+By [the exact threshold theorem](exact_threshold.md), for each fixed finite $`t`$ some pure state $`|\Psi\rangle\in\mathcal H_S\otimes\mathbb C^2`$ has a bounded NPT witness $`W`$ such that
 
-Define a finite-rank, hence bounded operator from the bosonic reference to the qubit by
+```math
+\operatorname{Tr}W(\Phi_t\otimes\operatorname{id}_2)
+(|\Psi\rangle\langle\Psi|)<0.
+```
 
-$$
-A_M|n\rangle=
-\begin{cases}
-|a_n\rangle/(\sqrt{1-\lambda^2}\lambda^n),&0\le n\le M,\\
+Write $`|\Psi\rangle=\sum_{n\ge0}|n\rangle|a_n\rangle`$. Let $`P_M`$ project onto the first $`M+1`$ Fock levels and form the normalized truncation $`|\Psi_M\rangle\propto(P_M\otimes I_2)|\Psi\rangle`$. These input states converge in trace norm to $`|\Psi\rangle`$, and normal channels are trace-norm contractive on state differences. Therefore, for sufficiently large *finite* $`M`$, the output on $`|\Psi_M\rangle`$ still has a negative $`W`$ expectation.
+
+Define the finite-rank reference operator
+
+```math
+A_M|n\rangle=\begin{cases}
+\dfrac{|a_n\rangle}{\sqrt{1-\lambda^2}\lambda^n},&0\le n\le M,\\
 0,&n>M.
 \end{cases}
-$$
+```
 
-Scale it to a contraction $K_M=A_M/\max(1,\|A_M\|)$, a legitimate local filter with strictly positive success probability. Then
+It is bounded at fixed $`M`$. Scale it to a contraction $`K_M=A_M/\max(1,\|A_M\|)`$, a legitimate local filter with some strictly positive success probability. Then
 
-$$
-(I\otimes K_M)|\Omega_\lambda\rangle\propto|\Psi_M\rangle.
-$$
+```math
+(I\otimes K_M)|\Omega_\lambda\rangle
+\propto|\Psi_M\rangle.
+```
 
-The filter acts **only on the untouched reference** and commutes with the channel on the system. If the TMSV output were PPT, any bounded local filter on its reference would preserve PPT. Its successful branch is the NPT output on $|\Psi_M\rangle$, a contradiction.
+The filter acts **only on the untouched reference**, so it commutes with applying $`\Phi_t`$ to the system. If the output on $`|\Omega_\lambda\rangle`$ were PPT, every bounded local filter would preserve PPT. Yet the successful output is the NPT output on $`|\Psi_M\rangle`$, a contradiction.
 
-There is no unnormalizable continuous-variable Choi state here. The partial transpose of the input TMSV is trace class with trace norm $(1+\lambda)/(1-\lambda)$, and every filter used is finite rank.
+All operations are normal and bounded, and only finite-rank filters appear. The two-mode squeezed state has a trace-class partial transpose with norm $`(1+\lambda)/(1-\lambda)`$, so no unnormalizable Choi state or unbounded inverse thermal density operator is used.
 
-## Operational limitation
+## What this does not imply
 
-The filter may succeed with an arbitrarily small probability when $M$ is large, and the surviving NPT signal can be negligible. This does **not** establish a positive quantum communication rate, constant recovery fidelity, or experimentally detectable long-lived entanglement. The whole channel still approaches the EB set at cubic-exponential order in the energy-unconstrained diamond norm.
+The filter is a *mathematical certificate*: for large $`t`$ the success probability and detectable NPT signal can be extremely small. A receiver cannot obtain a fixed-fidelity quantum memory merely from nonzero NPT in arbitrarily rare tails. The [uniform diamond estimate](cubic_distance.md) independently shows that the complete channel approaches the EB set at a cubic exponential rate. The two conclusions are compatible and concern different operational notions.

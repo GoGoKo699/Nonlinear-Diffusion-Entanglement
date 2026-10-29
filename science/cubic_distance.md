@@ -1,203 +1,228 @@
-# Uniform cubic-exponential proximity to entanglement-breaking channels
+# Cubic-exponential operational classicalization
 
-[Model](model.md) · [Brownian mixture](conditional_gaussian.md) · [Sharp EB time](exact_threshold.md)
+[Model](model.md) · [Brownian mixture](conditional_gaussian.md) · [Exact cutoff](exact_threshold.md)
 
-## Statement and conventions
+## Theorem
 
-Take $\eta=0$. In canonical units $D=\kappa=1$, with fixed drift $\omega\in\mathbb R$, define the energy-unconstrained distance
+Set $`\eta=0`$. In canonical units $`D=\kappa=1`$ and at fixed real drift $`\omega`$, define
 
-$$e(t)=\inf_{\Psi\in\mathrm{EB}}\frac12\|\Phi_t-\Psi\|_\diamond.$$
+```math
+e(t)=\inf_{\Psi\in\mathrm{EB}}\tfrac12
+\|\Phi_t-\Psi\|_\diamond.
+```
 
-For all $t\ge1$,
+For every $`t\ge1`$,
 
-$$
-\boxed{
-\frac{c_*}{1+\omega^2}e^{-4t^3-\omega^2t/2}
+```math
+\boxed{\frac{c_*}{1+\omega^2}
+\exp(-4t^3-\omega^2t/2)
 \le e(t)\le
-\min\left\{1,\sqrt{\frac{8t^3}{1-e^{-8t^3}}}\,e^{-t^3}\right\},
-}
-$$
+\min\!\left\{1,
+\sqrt{\frac{8t^3}{1-e^{-8t^3}}}e^{-t^3}\right\},}
+```
 
-where
+with the explicit positive constant
 
-$$
-\boxed{
-c_*=\frac{2/3+5/\pi^2}{32}
+```math
+\boxed{c_*=\frac{2/3+5/\pi^2}{32}
 \left[\cos(1/32)\sqrt{\frac{31}{8\pi}}e^{-5/32}
 -\frac{e^{1/4}}{2\sqrt\pi}\right]
-=0.02153222609588753\ldots>0.
-}
-$$
+=0.02153222609588753\ldots>0.}
+```
 
-Consequently $-\log e(t)=\Theta(t^3)$ at fixed $\omega$. The two cubic exponent coefficients (one and four) are **not equal**; their optimal coefficient is not known. This is stronger than decay of a selected observable because the upper inequality bounds the channel on **every input and reference without an energy cutoff**.
+Thus $`-\log e(t)=\Theta(t^3)`$ at fixed $`\omega`$. For general $`D,\kappa>0`$, the canonical time and drift are
 
-## 1. The uniform upper estimate
+```math
+\tau=D^{2/3}\kappa^{1/3}t,
+\quad \Omega=\frac{\omega}{D^{1/3}\kappa^{2/3}},
+```
 
-By [the mixture representation](conditional_gaussian.md), conditioned on the quadratic shear the displacement covariance has
+so the exponent is of order $`D^2\kappa t^3`$ at fixed physical parameters. The upper and lower cubic coefficients (one and four in canonical units) do not match; **the exact large-time exponent coefficient is not established**.
 
-$$
-\det V_S=8t^3Z_\delta,\quad
-Z_\delta=\int_0^1[Y_u+\delta(u-\tfrac12)]^2du,\quad
-\delta=\omega\sqrt{t/2}.
-$$
+The upper bound covers *every input energy and all references*. The lower is witnessed by an explicitly normalized state with a qubit reference and finite, although growing, preparation energy. No claim of useful quantum-memory fidelity follows.
 
-Let $A_t=\{8t^3Z_\delta<1\}$ be the bad event. On its complement each conditional channel is EB by the one-mode Gaussian EB criterion. Construct a normal EB channel $\Psi_t$ by keeping the actual conditional channels on the good paths and replacing the bad paths by any fixed state-preparation EB channel. Since the half trace-norm difference of two channels on any input is at most one,
+## 1. Uniform upper bound by removing exceptional Brownian paths
 
-$$
-\frac12\|\Phi_t-\Psi_t\|_\diamond\le\mathbb P(A_t).
-$$
+[The conditional channel](conditional_gaussian.md) has displacement covariance determinant $`8t^3Z_\delta`$ with $`\delta=\omega\sqrt{t/2}`$ when $`D=\kappa=1`$. Every conditional channel is EB on the **good event** $`\{8t^3Z_\delta\ge1\}`$. Let $`p_t`$ be the probability of its complement. Replace the conditional channel on the bad event by a fixed normal EB preparation channel, keeping it unchanged on good paths. Convexity and closedness of separable states make the resulting averaged $`\Psi_t`$ EB. For every joint input on the system and an arbitrary reference,
 
-Convex/closed separability makes the average of good conditional channels and bad-path replacement EB. This bound holds for arbitrary references.
+```math
+\frac12\|\Phi_t-\Psi_t\|_\diamond\le p_t.
+```
 
-The [noncentral Laplace transform](conditional_gaussian.md) is no larger than its centered counterpart because $\tanh(r/2)\le r/2$. Chernoff therefore yields, for $x>0,s>0$,
+The bound follows by integrating the half trace-norm difference of two channels, which is at most one on the bad event. There is **no dimension factor, input-energy cutoff or ancillary-system assumption**. The same argument works in the energy-unconstrained norm.
 
-$$
-\mathbb P(Z_\delta<x)\le e^{sx}
-\left(\frac{\sqrt{2s}}{\sinh\sqrt{2s}}\right)^{1/2}.
-$$
+For nonzero drift, Anderson's inequality for centered Gaussian measures on Hilbert space and convex symmetric $`L^2`$ balls gives
 
-Choose $x=(8t^3)^{-1}$ and $s=8t^6$. Then
+```math
+\Pr(Z_\delta<x)\le\Pr(Z_0<x),\quad x>0.
+```
 
-$$
+Alternatively, the explicit noncentral Laplace transform in [the mixture chapter](conditional_gaussian.md) is bounded above by the centered transform because $`\tanh(r/2)\le r/2`$; applying the same Chernoff bound directly yields the displayed result, without needing a separate Anderson inequality.
+
+Write $`Z=Z_0`$. Its exact Laplace transform is
+
+```math
+\mathbb Ee^{-sZ}=
+\left[\frac{\sqrt{2s}}{\sinh\sqrt{2s}}\right]^{1/2}.
+```
+
+Chernoff's inequality at $`x=(8t^3)^{-1}`$ and $`s=8t^6`$ gives
+
+```math
 \begin{aligned}
-e(t)&\le\mathbb P(A_t)\\
-&\le e^{t^3}\left(\frac{4t^3}{\sinh(4t^3)}\right)^{1/2}
-=\sqrt{\frac{8t^3}{1-e^{-8t^3}}}\,e^{-t^3}.
+p_t&\le\exp(t^3)
+\left[\frac{4t^3}{\sinh(4t^3)}\right]^{1/2}\\
+&=\sqrt{\frac{8t^3}{1-e^{-8t^3}}}\,e^{-t^3}.
 \end{aligned}
-$$
+```
 
-The trivial bound $e(t)\le1$ completes the upper inequality. The EB comparator is time dependent: the result is not convergence to a fixed stationary state. The conditional decomposition is a **proof**, not side information available to a physical decoder.
+Together with the trivial upper bound one, this proves the theorem's right-hand inequality. The output EB approximant varies with time; the channel need not converge to a fixed equilibrium preparation map.
 
-## 2. Exactly orthogonal finite-energy packets
+## 2. Exactly orthogonal, finite-energy momentum packets
 
-Use a real compactly supported momentum state,
+For $`w>0`$ define a real, compactly supported normalized packet
 
-$$
+```math
 f_w(p)=\begin{cases}
 w^{-1/2}\cos(\pi p/(2w)),&|p|\le w,\\
 0,&|p|>w.
 \end{cases}
-$$
+```
 
-It has $\|f_w\|_2=1$ and a square-integrable weak derivative. For $a>w$ let $f_\pm(p)=f_w(p\mp a)$; their supports are disjoint and the two states exactly orthonormal.
+It has a square-integrable weak derivative; its reference energy is finite. For $`a>w`$, define $`f_\pm(p)=f_w(p\mp a)`$. The supports are disjoint; hence $`f_+,f_-`$ are exactly orthonormal. Prepare
 
-Prepare a Bell-like state with a qubit reference,
+```math
+|\Psi\rangle=\frac{|f_+\rangle|0\rangle+|f_-\rangle|1\rangle}{\sqrt2}
+```
 
-$$
-|\Psi\rangle=\frac{|f_+\rangle|0\rangle+|f_-\rangle|1\rangle}{\sqrt2},
-\quad
-|\chi\rangle=\frac{|f_-\rangle|0\rangle-|f_+\rangle|1\rangle}{\sqrt2},
-\quad W=(|\chi\rangle\langle\chi|)^{\Gamma_R}.
-$$
+and test the output with $`W=(|\chi\rangle\langle\chi|)^{\Gamma_R}`$, where
 
-The test operator has $\|W\|_\infty=1/2$ and nonnegative expectation on every separable state. Put
+```math
+|\chi\rangle=\frac{|f_-\rangle|0\rangle-|f_+\rangle|1\rangle}{\sqrt2}.
+```
 
-$$
-D_t=\langle f_-|\Phi_t(|f_+\rangle\langle f_+|)|f_-\rangle,\quad
-C_t=\langle f_+|\Phi_t(|f_+\rangle\langle f_-|)|f_-\rangle.
-$$
+Because $`\chi`$ has two equal orthogonal Schmidt coefficients, $`\|W\|_\infty=1/2`$. Every separable output has nonnegative expectation of $`W`$. Define
 
-Parity invariance and the partial transpose yield
+```math
+\begin{aligned}
+D_t&=\langle f_-|\Phi_t(|f_+\rangle\langle f_+|)|f_-\rangle,\\
+C_t&=\langle f_+|\Phi_t(|f_+\rangle\langle f_-|)|f_-\rangle.
+\end{aligned}
+```
 
-$$
-\operatorname{Tr}W(\Phi_t\otimes\mathrm{id})(|\Psi\rangle\langle\Psi|)
-=\frac{D_t-\operatorname{Re}C_t}{2}.
-$$
+Parity symmetry and the reference partial transpose give
 
-For any EB comparator the witness expectation is nonnegative; Hölder's inequality with $\|W\|_\infty=1/2$ gives
+```math
+\operatorname{Tr}(W\Sigma_t)=\tfrac12(D_t-\operatorname{Re}C_t),
+\qquad \Sigma_t=(\Phi_t\otimes\operatorname{id})(|\Psi\rangle\langle\Psi|).
+```
 
-$$e(t)\ge\frac{\operatorname{Re}C_t-D_t}{2}.$$
+Consequently
 
-This is a lower bound on the **same energy-unconstrained diamond metric** as in the upper argument. The state has finite preparation energy and uses no distributional oscillator Choi vector.
+```math
+e(t)\ge\tfrac12(\operatorname{Re}C_t-D_t).
+```
 
-## 3. Exact common weight and Mehler inequalities
+This is a lower bound on the *same* half-diamond distance as in the uniform upper proof. It does not rely on a nonnormal infinitely squeezed Choi state.
 
-Insert the inherited Mehler kernel in [the threshold chapter](exact_threshold.md) at $D=\kappa=1,\eta=0$. Translation of packet centers reduces $D_t,C_t$ to integrals against the *same* nonnegative four-packet weight
+## 3. Shared weight and Mehler bounds
 
-$$
+Insert the kernel from [the exact-threshold chapter](exact_threshold.md) at $`D=\kappa=1`$, $`\eta=0`$. After translating packet centers, both quantities are three-dimensional integrals against the same nonnegative weight
+
+```math
 G_w(x,y,r)=f_w(x)f_w(y)
-f_w\left(r+\frac{x-y}{2}\right)
-f_w\left(r-\frac{x-y}{2}\right).
-$$
+f_w(r+(x-y)/2)f_w(r-(x-y)/2).
+```
 
-Its integral is exactly
+The integral of this weight has an exact value
 
-$$
-J_w=\iiint G_w\,dx\,dy\,dr=c_fw,\qquad
-c_f=\frac23+\frac5{\pi^2}.
-$$
+```math
+J_w=\iiint G_w\,dx\,dy\,dr
+=w\,c_f,\qquad c_f=\frac23+\frac5{\pi^2}.
+```
 
-To verify, the unit-width cosine packet's autocorrelation is
+For completeness, the autocorrelation of the unit-width packet is
 
-$$
-A(v)=\left(1-\frac{|v|}{2}\right)\cos\frac{\pi|v|}{2}
-+\frac{\sin(\pi|v|/2)}{\pi},\qquad |v|\le2,
-$$
+```math
+A(v)=\left(1-\frac{|v|}{2}\right)\cos(\pi|v|/2)
++\frac{\sin(\pi|v|/2)}\pi,
+\quad |v|\le2,
+```
 
-and $c_f=\int_{-2}^{2}A(v)^2\,dv$. Four packet amplitudes give $w^{-2}$, three integration variables $w^3$, so the scaling is **$w$**, not $w^2$.
+and $`c_f=\int_{-2}^2 A(v)^2dv`$. The four packet factors contribute $`w^{-2}`$ and the three integration variables $`w^3`$, explaining the single factor of $`w`$.
 
-For the diagonal term, the input and output packet centers differ by $2a$; Feynman–Kac domination of the harmonic heat kernel by the free heat kernel gives
+For the diagonal transition, output and input momentum centers are separated by $`2a`$. Feynman–Kac domination of the Mehler kernel by the free heat kernel gives
 
-$$
-\boxed{
-D_t\le\frac{J_w}{\sqrt{4\pi t}}
-\exp[-(a-w)^2/t].
-}
-$$
+```math
+\boxed{D_t\le\frac{J_w}{\sqrt{4\pi t}}
+\exp[-(a-w)^2/t].}
+```
 
-For the coherence, the momentum difference obeys
-$2a-2w\le |y|\le2a+2w$ and both kernel centers remain within $w$ of zero. Using $\sinh(2|y|t)\le e^{2|y|t}/2$, the identity $\coth(2z)+\operatorname{csch}(2z)=\coth z$, and bounding the drift phase by $|\omega|w$, one finds for $|\omega|w<\pi/2$,
+For the coherence, the input and output kernel centers stay within $`w`$ of zero, while its momentum difference satisfies $`2a-2w\le |y|\le2a+2w`$. Using $`\sinh(2|y|t)\le e^{2|y|t}/2`$, the Mehler exponent identity
 
-$$
+```math
+\coth(2z)+\operatorname{csch}(2z)=\coth z,
+```
+
+and bounding the drift phase by $`|\omega|w`$, one obtains, provided $`|\omega|w<\pi/2`$,
+
+```math
 \boxed{\begin{aligned}
-\operatorname{Re}C_t\ge{}&
-J_w\cos(|\omega|w)\sqrt{\frac{2a-2w}{\pi}}\\
-&\times\exp\left[
--(2a+2w)t-\frac{\omega^2t}{4}
--(2a+2w)w^2\coth((2a-2w)t)
-\right].
+\operatorname{Re}C_t\ge{}&J_w\cos(|\omega|w)
+\sqrt{\frac{2a-2w}{\pi}}\\
+&\times\exp\left[-(2a+2w)t-
+\frac{\omega^2t}{4}
+-(2a+2w)w^2\coth((2a-2w)t)\right].
 \end{aligned}}
-$$
+```
 
-This is a bound on an actual oscillatory integral: on the packet support the real part of the phase stays positive. The other drift damping is bounded below by $e^{-\omega^2t/4}$. Both displays apply for each finite $a,w,t$ satisfying their assumptions.
+No oscillatory-integral sign assumption is hidden: the phase's real cosine is positive on the support by the displayed restriction. The real drift damping is bounded below by $`e^{-\omega^2t/4}`$.
 
-## 4. Choose the packet parameters
+## 4. Parameter choice and a positive universal constant
 
-For $t\ge1$ set
+For $`t\ge1`$, choose
 
-$$
-a=2t^2+\frac{\omega^2}{8},
-\qquad w=\frac{1}{16t(1+\omega^2)}.
-$$
+```math
+a=2t^2+\omega^2/8,
+\qquad w=\frac1{16t(1+\omega^2)}.
+```
 
-Then $a>w$, $2wt\le1/8$, $|\omega|w\le1/32$, $2a-2w\ge31t^2/8$ and
+Elementary inequalities then give $`a>w`$, $`2wt\le1/8`$, $`2a-2w\ge31t^2/8`$, $`|\omega|w\le1/32`$ and
 
-$$
-(2a+2w)w^2\coth((2a-2w)t)\le1/32,
-\qquad
-\frac{(a-w)^2}{t}\ge4t^3+\frac{\omega^2t}{2}-\frac14.
-$$
+```math
+(2a+2w)w^2\coth((2a-2w)t)\le\frac1{32}.
+```
 
-Substituting into the two previous kernel estimates and then into
-$e(t)\ge(\operatorname{Re}C_t-D_t)/2$ gives the explicit positive $c_*$ in the theorem. The [verification code](../verification/README.md) checks the finite integrals and elementary constants; the general bound comes from the displayed inequalities.
+Moreover $`2aw/t\le1/4`$ and
 
-The positive lower bound exhibits an NPT output for every $t\ge1$. If an earlier $\Phi_s$ with $0<s<1$ were PPT-inducing, then $\Phi_1=\Phi_{1-s}\circ\Phi_s$ would also be PPT-inducing, since local postprocessing preserves PPT. Hence **no finite time is PPT-inducing or EB**, in agreement with the independent sharp-threshold theorem at $\eta=0$.
+```math
+\frac{(a-w)^2}{t}
+\ge 4t^3+\frac{\omega^2t}{2}-\frac14.
+```
 
-## 5. Energy and general positive strengths
+Substitute these bounds into the previous two displays, use $`J_w=c_fw`$, and compare the positive coherence with the diagonal leakage. The resulting coefficient is precisely
 
-The compact cosine packet has
+```math
+\frac{c_f}{32(1+\omega^2)}
+\left[\cos(1/32)\sqrt{\frac{31}{8\pi}}e^{-5/32}
+-\frac{e^{1/4}}{2\sqrt\pi}\right]>0.
+```
 
-$$
+This proves the theorem's left inequality and also supplies an NPT witness for every $`t\ge1`$. Because later local channels preserve PPT outputs, if $`\Phi_s`$ were PPT-inducing for some $`s<1`$, then $`\Phi_1=\Phi_{1-s}\circ\Phi_s`$ would be PPT-inducing, contradicting the witness. Therefore $`\Phi_t`$ is not PPT-inducing for **any** finite positive time. The exact threshold proof gives a second, independent direct witness for the same conclusion.
+
+## 5. Physical resource and general-rate scaling
+
+The compact packet has
+
+```math
 \langle P^2\rangle=a^2+w^2\left(\frac13-\frac2{\pi^2}\right),
-\qquad
-\langle Q^2\rangle=\frac{\pi^2}{4w^2}.
-$$
+\quad \langle Q^2\rangle=\frac{\pi^2}{4w^2}.
+```
 
-Thus $\langle (Q^2+P^2)/2\rangle=O_\omega(t^4)$ for this explicit *quantitative* witness. It is a sufficient construction, not a lower bound on the energy needed for any nonzero entanglement; [one fixed finite-energy input](fixed_input.md) already gives qualitative survival.
+With the displayed late-time parameters its reference energy $`\langle(Q^2+P^2)/2\rangle`$ grows as $`O_\omega(t^4)`$. This is a **sufficient preparation cost for the explicit quantitative witness**; it is not an energy lower bound for qualitative survival. [The fixed-input corollary](fixed_input.md) explains why one fixed finite-energy entangled state can remain NPT even though its detectable signal has no positive uniform bound.
 
-For general $D,\kappa>0$, a symplectic scaling and time change give canonical
-$\tau=D^{2/3}\kappa^{1/3}t$ and $\Omega=\omega/(D^{1/3}\kappa^{2/3})$. EB status and diamond distance are invariant under the unitary equivalence. Accordingly the cubic scale is $\tau^3=D^2\kappa t^3$.
+Finally, a symplectic scaling maps general positive $`D,\kappa`$ into canonical units with $`\tau=D^{2/3}\kappa^{1/3}t`$ and $`\Omega=\omega/(D^{1/3}\kappa^{2/3})`$. This is a unitary equivalence, so both exact EB status and the unconstrained diamond distance are invariant under the change of units. The cubic variable is $`\tau^3=D^2\kappa t^3`$.
 
-## What is not proved
+## 6. Limits of the proof
 
-The cubic exponent's leading coefficient remains between the displayed bounds; no exact asymptotic constant, positive quantum capacity, experimental advantage, fixed-error memory or finite-spin transfer is established. The result concerns the complete channel despite arbitrarily small remaining NPT.
+Neither bound supplies the best cubic exponent coefficient or an exact negativity asymptotic. NPT can be arbitrarily weak, especially when the witness energy grows; the upper bound already rules out a high-quality fixed-dimensional memory with error bounded away from its EB baseline at large times. We do **not** infer the energy-unconstrained quantum capacity by extending finite-dimensional diamond-continuity estimates, nor do we assert a finite-spin theorem from the oscillator calculation.

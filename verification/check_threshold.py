@@ -1,7 +1,7 @@
-"""Reproduce exact finite-energy NPT witness integrals and analytic bounds.
+"""Finite-parameter factor checks for the exact EB-time theorem.
 
-SciPy quadrature and Gauss-Hermite nodes are used on selected finite cases.
-These checks do not replace the all-time analytical proof.
+This evaluates the exact reduced Gaussian-packet integrals independently of
+the elementary upper/lower estimates used to establish the threshold.
 """
 import json
 import numpy as np
@@ -77,6 +77,7 @@ def compute(diffusion, kinetic, eta, omega, t, amplitude):
 
 
 def run_checks():
+    """Recompute selected exact packet matrix elements and rigorous bounds."""
     cases = [
         (2, .3, .125, .7, .5, 20),
         (2, .3, .125, .7, .9, 20),

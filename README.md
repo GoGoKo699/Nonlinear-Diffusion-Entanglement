@@ -1,76 +1,75 @@
 # Nonlinear Diffusion and Entanglement
 
-**Quadratic stochastic motion can prevent exact entanglement death while an entire continuous-variable quantum channel approaches measure-and-prepare dynamics exponentially fast.** Direct momentum diffusion restores a sharp finite-time entanglement-breaking boundary.
+**Quadratic stochastic motion can prevent exact entanglement death while driving an entire continuous-variable quantum channel exponentially close to a measure-and-prepare channel.** Independent position diffusion restores a sharp finite-time entanglement-breaking threshold.
 
-Consider one free canonical degree of freedom with $[Q,P]=i$, $H=P^2/2$, and the normal random-unitary semigroup whose formal generator is
+On one noncompact canonical degree of freedom, with $`[Q,P]=i`$ and $`H=P^2/2`$, study the normal random-unitary semigroup with formal generator
 
-$$
-\mathcal L(\rho)=-i\omega[H,\rho]-D[Q,[Q,\rho]]
--\kappa[H,[H,\rho]]-\eta[P,[P,\rho]],
-\qquad D,\kappa>0,\quad\eta\ge0.
-$$
+```math
+\mathcal L(\rho)=-i\omega[H,\rho]
+-D[Q,[Q,\rho]]-\kappa[H,[H,\rho]]
+-\eta[P,[P,\rho]],\quad D,\kappa>0,\ \eta\ge0.
+```
 
-## Results
+The *exact entanglement-breaking time* is
 
-**Exact boundary.** Its first entanglement-breaking time is
-
-$$
-\boxed{t_{\rm EB}=
-\begin{cases}
+```math
+\boxed{t_{\mathrm{EB}}=\begin{cases}
 (2\sqrt{D\eta})^{-1},&\eta>0,\\
 \infty,&\eta=0.
 \end{cases}}
-$$
+```
 
-At and above the finite threshold the channel is entanglement breaking. At every strictly earlier positive time there is a **normalizable finite-energy system–qubit state with an NPT output**, so the interval is sharp even against arbitrary reference systems. This holds for all positive kinetic dephasing rates and finite deterministic drift. [Precise theorem and converse](science/exact_threshold.md).
+For every positive time strictly below this boundary, a **normalizable finite-energy system–qubit input** yields a negative-partial-transpose (NPT) output; at and beyond the finite boundary, the channel is entanglement breaking. The threshold includes its endpoint and does not depend on positive $`\kappa`$ or finite drift $`\omega`$. [Exact theorem and proof](science/exact_threshold.md).
 
-**Operational classicalization without exact entanglement death.** For $\eta=0$, define the energy-unconstrained half-diamond distance $e(t)$ to the set of entanglement-breaking channels. At fixed positive $D,\kappa$ and finite $\omega$,
+When $`\eta=0`$, let $`e(t)`$ be the infimum of the half-diamond distance to all entanglement-breaking channels, with **no input-energy restriction**. For fixed $`D,\kappa>0`$ and $`\omega\in\mathbb R`$,
 
-$$
--\log e(t)=\Theta(D^2\kappa t^3).
-$$
+```math
+-\log e(t)=\Theta(D^2\kappa t^3)\quad(t\to\infty).
+```
 
-The upper bound controls every input and reference; the matching logarithmic order is certified by finite-energy compact momentum packets. The optimal leading constant in the cubic exponent is **not** established. [Matching logarithmic bounds](science/cubic_distance.md).
+The upper bound applies uniformly to every input and reference; the lower bound is certified by compact, exactly orthogonal finite-energy momentum packets. The exponent's leading constant is **not** optimized. [Cubic-distance theorem](science/cubic_distance.md).
 
-**Singular Gaussian comparison.** At $\kappa=0$, the channel is Gaussian and the EB threshold instead solves
+## The singular Gaussian boundary
 
-$$4D\eta t^2+\frac{D^2\omega^2t^4}{3}=1.$$
+At $`\kappa=0`$, the channel instead has Gaussian additive noise (up to a Gaussian unitary), with entanglement-breaking threshold determined by
 
-With $\eta=0$ and $\omega\neq0$, its finite cutoff is $3^{1/4}/\sqrt{D|\omega|}$, while every $\kappa>0$ removes the finite cutoff. The parameter dependence is singular because the quadratic noise generator is unbounded; this does **not** imply useful memory improvement or diamond-small perturbation. [Physical interpretation](science/interpretation.md).
+```math
+4D\eta t^2+\frac{D^2\omega^2t^4}{3}=1.
+```
 
-For $\eta=0$, a single fixed **finite-energy two-mode squeezed vacuum** is also NPT after one mode experiences the channel at every finite time. This qualitative observation gives no uniform amount of entanglement and no capacity theorem. [Proof](science/fixed_input.md).
+With $`\eta=0`$ and $`\omega\ne0`$, it becomes entanglement breaking after the **finite** time $`3^{1/4}/\sqrt{D|\omega|}`$. Every $`\kappa>0`$, however small, removes this exact finite cutoff. This is a singular statement about the exact entanglement-breaking property in an unbounded-noise model, **not** a claim that a diamond-small perturbation dramatically enhances usable quantum memory. [Physical interpretation](science/interpretation.md).
 
-## Read the science
+A single fixed, finitely squeezed two-mode squeezed vacuum also has NPT output at all finite times for $`\eta=0`$; this follows from normal-state filtering and yields **no lower bound** on useful surviving entanglement or quantum capacity. [Fixed-input corollary](science/fixed_input.md).
 
-| Question | Authoritative file |
+## Scientific reading route
+
+| Question | Read |
 |---|---|
-| Which physical channel, domains and resources? | [Model and exact claims](science/model.md) |
-| Why do stochastic quadratic shears produce conditional Gaussian channels? | [Conditional representation](science/conditional_gaussian.md) |
-| Why is the exact EB time sharp? | [Pathwise upper bound and finite-energy NPT converse](science/exact_threshold.md) |
-| Why cubic decay in an all-input channel norm? | [Brownian upper and compact-packet lower](science/cubic_distance.md) |
-| Can a fixed low-energy input retain entanglement? | [Faithful-state corollary](science/fixed_input.md) |
-| What changes at zero quadratic dephasing? | [Gaussian limit and operational limits](science/interpretation.md) |
-| Which ingredients were already known? | [Primary sources and novelty comparison](references/RELATED_WORK.md) |
-| How to check formulas and sample witnesses? | [Verification](verification/README.md) |
+| Precise Hilbert-space model, allowed resources, conventions and propositions | [Model and definitions](science/model.md) |
+| Why does conditioning on quadratic noise produce a mixture of Gaussian channels? | [Conditional Gaussian representation](science/conditional_gaussian.md) |
+| Where is the exact entanglement-breaking cutoff proved? | [Sharp threshold and finite-energy witness](science/exact_threshold.md) |
+| Why is the channel uniformly close to classical but never exactly classical? | [Matching cubic logarithmic bounds](science/cubic_distance.md) |
+| Does one fixed finite-energy entangled input survive? | [Faithful-state corollary](science/fixed_input.md) |
+| Which conclusions matter physically and which do not follow? | [Interpretation and limits](science/interpretation.md) |
+| What is inherited and what distinguishes this result? | [Primary-literature comparison](references/RELATED_WORK.md) |
+| How are the formulas and finite witnesses checked? | [Verification and reproducibility](verification/README.md) |
 
-The [science index](science/README.md) connects the argument. The [LLM reading map](llms.txt) points to authoritative topic pages. A single educational anchor and an exactly 30-milestone map will be integrated in the subsequent furnishing stage, after the anchor choice.
+The [science index](science/README.md) gives a connected proof route. An [LLM-oriented retrieval guide](llms.txt) points to each claim's authoritative home. The educational bridge and project-defined 30-milestone map are added after a single source is selected; none is assumed here.
 
 ## Reproduce
-
-Run the pinned Python consistency checks from the repository root:
 
 ```bash
 python3 -m pip install -r verification/requirements.txt
 python3 verification/run_checks.py
 ```
 
-They test the analytical packet integrals, rigorous inequalities, Brownian Laplace product and Gaussian determinant. Finite tests do **not** prove all-time statements or certify hosted equation rendering.
+The tests check the Mehler kernel, exact packet integrals, rigorous bounds, Gaussian-channel cutoff and Brownian quadratic-functional identities. Finite tests inspect algebra and numerical conventions; the universal statements rely on the written proofs. No Monte Carlo data are needed for the principal result.
 
-## Scope and attribution
+## Attribution and scope
 
-The **model and exact propagator are inherited** from Speed, Lyu and Schubert (2023). The Gaussian EB criterion is inherited from Holevo (2008) and the Gaussian Brownian comparison from Riedel (2016). This account develops the nonlinear mixture's sharp EB/PPT boundary, finite-energy witnesses and uniform cubic-distance law. See [related work](references/RELATED_WORK.md). No exhaustive priority certification is claimed.
+The position/kinetic-energy-dephasing model, Grushin geometry and exact propagator come from **Speed, Lyu and Schubert (2023)**. Gaussian entanglement-breaking criteria and finite-time Gaussian Brownian measurement descriptions are inherited from **Holevo (2008)** and **Riedel (2016)**. The present account derives the precise **non-Gaussian entanglement-breaking boundary**, its singular dependence on quadratic noise, normalized NPT witnesses and the operational cubic-distance law. See the [related-work comparison](references/RELATED_WORK.md); no exhaustive priority claim is made.
 
-The carrier is one noncompact degree of freedom on $L^2(\mathbb R)$, not a finite spin or a bounded-energy physical device. The environment's stochastic path is never observed, and no noiseless quantum bypass or intermediate correction is supplied. NPT does **not** imply positive quantum capacity or an operationally useful quantum memory.
+The dynamics act on $`L^2(\mathbb R)`$, not a bounded-energy device or an irreducible finite spin. The environment is unobserved; the reference is arbitrary; no intermediate correction or noiseless quantum bypass is allowed. The lack of finite-time entanglement breaking does **not** imply positive quantum capacity, finite-error memory, or experimentally useful survival. Statements that vary $`\kappa`$ cannot be interpreted as unconstrained-diamond-small perturbations because $`H`$ is unbounded.
 
 ## Purpose and contact
 
