@@ -33,7 +33,7 @@ The Brownian Laplace tests compare closed form with a truncated 30,000-mode cosi
 
 The independent learning checker evaluates the primer's qubit partial transpose at four coherence values and compares twelve finite Gaussian covariance determinants with their closed formula. It checks the example cutoff $`\sqrt{(\sqrt{21}-3)/2}`$. The exact diamond-distance argument in that example is analytical; the script does not silently substitute a finite matrix norm for a diamond norm.
 
-Map and navigation assertions operate on current files, so a missing milestone, forward dependency or broken local destination fails the command. Structural checks are paired with a semantic review of the two phases and the source-to-project bridge. The [Sanity Check record](SANITY_CHECK.md) states the inspected baseline, scope and outstanding hosted-rendering limitation.
+Map and navigation assertions operate on current files, so a missing milestone, forward dependency or broken local destination fails the command. Structural checks are paired with a semantic review of the two phases and the source-to-project bridge. The [Sanity Check record](SANITY_CHECK.md) states the inspected baseline, scope, repaired renderer defect and completed hosted review.
 
 ## Reproducibility boundaries
 
