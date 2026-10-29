@@ -73,7 +73,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Question:** How does a Hermitian Lindblad jump become a dephasing term?
 
-**Target:** Use $\gamma\mathcal D[A](\rho)=-(\gamma/2)[A,[A,\rho]]$ for self-adjoint $A$, and distinguish the rates $2D,2\kappa,2\eta$ from the coefficients in the project's generator.
+**Target:** Use $\gamma(A\rho A-\{A^2,\rho\}/2)=-(\gamma/2)[A,[A,\rho]]$ for self-adjoint $A$, and distinguish the rates $2D,2\kappa,2\eta$ from the coefficients in the project's generator.
 
 **Dependencies:** M02, M03, M05. This translates the source's generator into the actual model.
 
@@ -256,7 +256,7 @@ The one educational anchor is Rivas–Huelga, _Open Quantum Systems: An Introduc
 
 **Question:** Why can setting $\kappa$ exactly to zero change the entanglement-breaking time discontinuously?
 
-**Target:** Derive the deterministic-shear Gaussian determinant, distinguish the separate $\kappa=0$ calculation from the positive-$\kappa$ converse, and interpret the weak-noise upper bound without assuming diamond-small perturbations.
+**Target:** Derive the deterministic-shear Gaussian determinant, distinguish the separate $\kappa=0$ calculation from the converse for positive $\kappa$, and interpret the weak-noise upper bound without assuming diamond-small perturbations.
 
 **Dependencies:** M14, M20. This connects the threshold to its closest physical baseline.
 

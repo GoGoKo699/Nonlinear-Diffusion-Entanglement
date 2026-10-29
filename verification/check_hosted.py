@@ -41,8 +41,8 @@ def main():
                         raise RuntimeError(f'Hosted page unavailable: {url}')
                     article = page.locator('.markdown-body').first
                     article.wait_for(state='visible', timeout=45000)
-                    # Locators include the open shadow roots used by math renderers.
                     article.locator('mjx-container, .katex, math').first.wait_for(state='attached', timeout=45000)
+                    page.evaluate('document.fonts.ready')
                     page.evaluate('window.scrollTo(0, 0)')
                     page.screenshot(path=str(output/f'{index:02}.png'), full_page=True, timeout=60000)
                     text = article.inner_text()
@@ -50,13 +50,17 @@ def main():
                     errors = article.locator('mjx-merror, .katex-error, [data-mjx-error]').count()
                     math_count = article.locator('mjx-container, .katex, math').count()
                     messages = ERROR_TEXT.findall(text)
+                    # These nine mathematical pages contain no literal currency or shell dollars.
+                    # Any visible dollar delimiter therefore indicates unrendered source mathematics.
+                    exposed_delimiters = text.count('$')
                     record = {'path': path, 'url': url, 'math_nodes': math_count,
                               'math_errors': errors, 'visible_error_messages': messages,
+                              'exposed_tex_delimiters': exposed_delimiters,
                               'screenshot': f'{index:02}.png'}
                     report['pages'].append(record)
                     save()
-                    if errors or messages or not math_count:
-                        raise RuntimeError(f'Math rendering check failed: {path}; {messages}')
+                    if errors or messages or exposed_delimiters or not math_count:
+                        raise RuntimeError(f'Math rendering check failed: {path}; {messages}; delimiters={exposed_delimiters}')
                 except BaseException:
                     (output/f'{index:02}-failure.html').write_text(page.content(), encoding='utf-8')
                     page.screenshot(path=str(output/f'{index:02}-failure.png'), full_page=True)

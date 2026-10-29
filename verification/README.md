@@ -30,7 +30,7 @@ The committed [reference_results.json](reference_results.json) records the expan
 
 ## Actual hosted-rendering check
 
-Source syntax and numerical success do not establish how GitHub displays equations. The separate [check_hosted.py](check_hosted.py) opens the **actual public GitHub pages at a full commit SHA**, waits for rendered math, rejects rendering-error nodes and records screenshots, page text and a page-by-page manifest.
+Source syntax and numerical success do not establish how GitHub displays equations. The separate [check_hosted.py](check_hosted.py) opens the **actual public GitHub pages at a full commit SHA**, waits for rendered math and fonts, and records full-page screenshots, page text and a page-by-page manifest.
 
 ```bash
 .venv/bin/python -m pip install -r verification/requirements-render.txt
@@ -38,7 +38,9 @@ Source syntax and numerical success do not establish how GitHub displays equatio
 SOURCE_REF="$(git rev-parse HEAD)" .venv/bin/python verification/check_hosted.py
 ```
 
-This check requires network access to GitHub and a compatible Chromium runtime. It inspects the README, learning primer, source bridge, milestone map and three mathematical proof pages. Evidence is written under `verification/local_results/hosted/`. The automated DOM checks detect missing math and reported rendering errors; screenshots must also be inspected for visual readability, clipping and table layout. An unavailable hosted check remains a presentation-verification gap, not a successful local preview.
+This check requires network access to GitHub and a compatible Chromium runtime. Its nine pages are the README, learning primer, source bridge, milestone map, model, conditional Gaussian proof, exact-threshold proof, cubic-distance proof and fixed-input proof. It rejects missing math, rendering-error nodes, visible GitHub diagnostic messages and exposed TeX dollar delimiters. The selected pages contain no literal currency or shell dollars. Evidence is written under `verification/local_results/hosted/`.
+
+Screenshots must also be inspected for visual readability, clipping and table layout. Automated success alone is insufficient: GitHub's visible macro-rejection messages can lie outside the usual MathJax error nodes, and Markdown parsing can prevent a formula reaching the renderer at all. An unavailable hosted check remains a presentation-verification gap, not a successful local preview.
 
 The workflow in `.github/workflows/verify.yml` runs the numerical/structural checks and the hosted-page capture for pull requests and main. It records the tested head SHA and uploads fresh reports, screenshots and an exact `git archive` of that source. Artifacts expire after seven days; durable findings and any required retained evidence belong in the final verification record, not solely in an expiring download link.
 
