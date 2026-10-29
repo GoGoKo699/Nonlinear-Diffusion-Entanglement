@@ -47,7 +47,7 @@ For a concrete characteristic-function convention, define $`W(z)=e^{iz^TR}`$. An
 If a subsequent Gaussian unitary has $`U^*RU=XR`$, then the full dual channel is
 
 ```math
-(\operatorname{Ad}_U\circ\mathcal N_V)^*(W(z))
+(\mathrm{Ad}_U\circ\mathcal N_V)^*(W(z))
 =e^{-z^TXVX^Tz/2}W(X^Tz).
 ```
 

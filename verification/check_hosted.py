@@ -14,7 +14,9 @@ REPOSITORY = 'GoGoKo699/Nonlinear-Diffusion-Entanglement'
 PAGES = [('README.md', True), ('learning/README.md', False),
          ('learning/HOLEVO_BRIDGE.md', True), ('learning/PRIMER.md', True),
          ('learning/MILESTONES.md', False), ('science/conditional_gaussian.md', True),
-         ('science/exact_threshold.md', True), ('science/cubic_distance.md', True)]
+         ('science/exact_threshold.md', True), ('science/cubic_distance.md', True),
+         ('science/model.md', True), ('science/fixed_input.md', True)]
+ERROR_TEXT = re.compile(r'The following macros are not allowed|Unable to render|ParseError|MathJax error', re.I)
 
 
 def main():
@@ -51,17 +53,21 @@ def main():
                     if requires_math:
                         article.locator('mjx-container, .katex, math').first.wait_for(state='attached', timeout=45000)
                     page.wait_for_timeout(1500)
+                    page.evaluate('window.scrollTo(0, 0)')
+                    page.screenshot(path=str(output/f'{index:02}-top.png'))
                     article.screenshot(path=str(output/f'{index:02}.png'), timeout=60000)
                     text = article.inner_text()
                     (output/f'{index:02}.txt').write_text(text, encoding='utf-8')
                     errors = article.locator('mjx-merror, .katex-error, [data-mjx-error]').count()
+                    text_errors = ERROR_TEXT.findall(text)
                     math_count = article.locator('mjx-container, .katex, math').count()
-                    if errors or (requires_math and not math_count):
-                        raise RuntimeError(f'Math rendering check failed: {path}')
+                    if errors or text_errors or (requires_math and not math_count):
+                        raise RuntimeError(f'Math rendering check failed: {path}; text errors: {text_errors}')
                     if not text.strip():
                         raise RuntimeError(f'Empty rendered article: {path}')
                     report['pages'].append({'path': path, 'url': url, 'math_nodes': math_count,
-                                            'math_errors': errors, 'screenshot': f'{index:02}.png'})
+                                            'math_errors': errors, 'error_text': text_errors,
+                                            'screenshot': f'{index:02}.png', 'top_screenshot': f'{index:02}-top.png'})
                     save()
                 except BaseException:
                     (output/f'{index:02}-failure.html').write_text(page.content(), encoding='utf-8')

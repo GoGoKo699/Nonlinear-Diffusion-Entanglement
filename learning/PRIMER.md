@@ -20,7 +20,7 @@ These objects connect Holevo §§2.4, 3.1 and 6.2–6.4 to the [infinite-dimensi
 
 ## Worked example: a qubit can be almost classical without being EB
 
-Let $`Z=\operatorname{diag}(1,-1)`$ and, for $`0\le q\le1`$, define
+Let $`Z=\mathrm{diag}(1,-1)`$ and, for $`0\le q\le1`$, define
 
 ```math
 \mathcal E_q(\rho)=\frac{1+q}{2}\rho+\frac{1-q}{2}Z\rho Z.
@@ -45,7 +45,7 @@ The distance to the whole EB set is exactly
 \inf_{\Psi\in\mathrm{EB}}\tfrac12\|\mathcal E_q-\Psi\|_\diamond=q/2.
 ```
 
-For the upper bound, $`\mathcal E_q-\Delta=(q/2)(\mathrm{id}-\operatorname{Ad}_Z)`$, and the diamond distance between identity and the phase-flip channel is two: their outputs on $`|+\rangle`$ are orthogonal, attaining the maximum. For the lower bound, let $`|v\rangle=(|01\rangle-|10\rangle)/\sqrt2`$ and $`W=(|v\rangle\langle v|)^{\Gamma_R}`$. Then $`\|W\|_\infty=1/2`$, $`\mathrm{Tr}(W\rho_q)=-q/2`$, and its expectation on every separable state is nonnegative. The trace-norm inequality forces every EB comparator to be at least $`q/2`$ away on the Bell input.
+For the upper bound, $`\mathcal E_q-\Delta=(q/2)(\mathrm{id}-\mathrm{Ad}_Z)`$, and the diamond distance between identity and the phase-flip channel is two: their outputs on $`|+\rangle`$ are orthogonal, attaining the maximum. For the lower bound, let $`|v\rangle=(|01\rangle-|10\rangle)/\sqrt2`$ and $`W=(|v\rangle\langle v|)^{\Gamma_R}`$. Then $`\|W\|_\infty=1/2`$, $`\mathrm{Tr}(W\rho_q)=-q/2`$, and its expectation on every separable state is nonnegative. The trace-norm inequality forces every EB comparator to be at least $`q/2`$ away on the Bell input.
 
 Taking $`q=e^{-\gamma t}`$ with $`\gamma>0`$ gives no finite EB time, but exponentially small distance to EB. This simple example shows why the generic distinction is not the new discovery. The project's contribution is its **specific nonlinear threshold, singular Gaussian comparison and cubic logarithmic decay law**.
 
