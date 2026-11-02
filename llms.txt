@@ -6,6 +6,8 @@ Connected scientific route: science/README.md
 Conditional stochastic shear, Gaussian displacement covariance and Brownian transform: science/conditional_gaussian.md
 Exact EB/PPT threshold and finite-energy Gaussian-packet converse: science/exact_threshold.md
 Energy-unconstrained cubic upper and compact-packet lower bounds: science/cubic_distance.md
+Rank-two spin sister application, parameter dictionary and local/global distinction: science/spin_contraction.md
+Authoritative spin contraction and finite-spin comparison: https://github.com/GoGoKo699/Spin-Diffusion-Classicalization/blob/bf31418c10302d1786451ddee9b9840f4d9983c8/science/rank_two_diffusion.md
 Fixed finitely squeezed input and bounded-reference-filter proof: science/fixed_input.md
 Gaussian kappa=0 comparison, weak-kappa upper bound and logical-fidelity consequences: science/interpretation.md
 Primary-source attribution and closest-work comparison: references/RELATED_WORK.md
@@ -31,3 +33,5 @@ Preserve these distinctions:
 7. Q-generated noise diffuses momentum; P-generated eta noise diffuses position. H=P²/2 is not the preparation-cost operator (Q²+P²)/2.
 8. The model and Mehler propagator are inherited from Speed–Lyu–Schubert; Gaussian EB theory is inherited. The primer's qubit example is not a new contribution.
 9. Holevo is the only educational anchor. Primary research citations support attribution and proofs, not additional reading prerequisites.
+10. In the spin application, n=2j and t=s n^(-2/3). Only fixed finite Schwartz spans, fixed finite references and bounded scaled-time intervals are controlled. The NPT lower bound transfers; the oscillator exceptional-path upper does not become a global spin upper.
+11. Every fixed finite s has a positive limiting spin EB-distance lower bound. The necessary condition n^2 t^3 -> infinity has no proved global converse at that scale. Equal-rate global proximity at t sqrt(n) -> infinity is a distinct weaker sufficient regime in the spin sister.

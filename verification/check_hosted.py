@@ -15,7 +15,8 @@ PAGES = [('README.md', True), ('learning/README.md', False),
          ('learning/MILESTONES.md', False), ('science/conditional_gaussian.md', True),
          ('science/exact_threshold.md', True), ('science/cubic_distance.md', True),
          ('science/model.md', True), ('science/fixed_input.md', True),
-         ('science/interpretation.md', True), ('science/README.md', False),
+         ('science/interpretation.md', True), ('science/spin_contraction.md', True),
+         ('science/README.md', False),
          ('references/RELATED_WORK.md', True), ('verification/README.md', True),
          ('verification/SANITY_CHECK.md', False)]
 ERROR_TEXT = re.compile(r'The following macros are not allowed|Unable to render|ParseError|MathJax error', re.I)
