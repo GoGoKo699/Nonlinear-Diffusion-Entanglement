@@ -82,7 +82,7 @@ All numbered book sections refer to the **second revised and expanded edition (2
 
 **Central question:** What does a small half-diamond distance guarantee?
 
-**Understanding target:** Distinguish state trace distance, a selected-output test and the reference-uniform channel norm; retain the one-half convention.
+**Understanding target:** Distinguish state trace distance, a selected-output or fixed-span convergence statement and the reference-uniform channel norm; retain the one-half convention.
 
 **Dependencies:** M02, M04, M05
 
@@ -378,7 +378,7 @@ All numbered book sections refer to the **second revised and expanded edition (2
 
 **Central question:** What exactly matches in the upper and lower distance estimates?
 
-**Understanding target:** Explain agreement of cubic logarithmic order, nonmatching exponent constants, fixed-rate scaling and the sufficient t^4 packet energy.
+**Understanding target:** Explain agreement of cubic logarithmic order, nonmatching exponent constants, fixed-rate scaling and the sufficient t^4 packet energy; track which inputs and time intervals a limit fixes.
 
 **Dependencies:** M25, M26
 
@@ -416,16 +416,16 @@ All numbered book sections refer to the **second revised and expanded edition (2
 
 **Sources:** Holevo §§12.2.3, 12.6.1–12.6.3; [Gaussian and weak-noise comparison](../science/interpretation.md).
 
-### M30 — Whole-project synthesis and scientific credit
+### M30 — Whole-project synthesis and the spin application
 
-**Central question:** What has changed in the physical understanding, and what has not been shown?
+**Central question:** Which nonlinear conclusions transfer to a growing spin, and what remains global?
 
-**Understanding target:** Explain the sharp boundary, cubic operational decay and fixed-input survival together; distinguish inherited machinery, proved consequences, finite checks and open coefficients or capacities.
+**Understanding target:** Explain the sharp boundary, cubic operational decay and fixed-input survival together; use the spin parameter dictionary, the growing-excitation contract and a transferred NPT witness to derive the necessary n^2t^3 -> infinity condition without asserting global sufficiency.
 
 **Dependencies:** M14, M23, M27, M28, M29
 
-**Story role:** Close the narrative with its contribution, scope and evidence.
+**Story role:** Close the narrative by testing the result in a distinct carrier while retaining its quantifiers and scientific credit.
 
-**Conceptual connection:** Exact entanglement survival is not reliable memory; the distinct contribution is the specified nonlinear law, not the generic exact/approximate distinction.
+**Conceptual connection:** Fixed-span trace-norm convergence preserves a negative witness; the all-input EB upper bound requires a separate global construction. Exact entanglement survival still does not promise reliable memory.
 
-**Sources:** Holevo §§10.1.2, 10.2, 10.3.1, 11.7; [interpretation](../science/interpretation.md), [related work](../references/RELATED_WORK.md), [verification](../verification/README.md).
+**Sources:** Holevo §§3.1, 6.4, 11.1, 11.5, 11.7, 12.2–12.4; [spin application](../science/spin_contraction.md), [worked transfer](PRIMER.md#a-controlled-application-to-a-growing-spin), [interpretation](../science/interpretation.md), [related work](../references/RELATED_WORK.md) and [verification](../verification/README.md).

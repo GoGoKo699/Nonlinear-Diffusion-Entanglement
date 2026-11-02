@@ -112,6 +112,14 @@ Set $`\eta=0`$. Brownian scaling converts the variance term into $`8D^2\kappa t^
 
 The exact Laplace transform of $`Z`$ yields a cubic-exponential upper bound. Separately, orthogonal compact packets yield a lower bound on the **same** metric. In canonical units, the proved bounds have cubic coefficients one and four; these constants are not matched. Thus the conclusion is $`-\log e(t)=\Theta(D^2\kappa t^3)`$, not a claimed exact leading exponent. See [cubic distance](../science/cubic_distance.md).
 
+## A controlled application to a growing spin
+
+The sister [Spin-Diffusion-Classicalization](https://github.com/GoGoKo699/Spin-Diffusion-Classicalization) studies one irreducible spin with $`n=2j`$. For rank-two noise $`-b\,\mathrm{ad}_{J_y}^2-c\,\mathrm{ad}_{J_z}^2`$, use a squeezed patch about the $`z`$ pole. At $`t=s n^{-2/3}`$, the typical excitation grows as $`n^{1/3}`$ and the controlled local limit, after exchanging quadratures, is precisely this model with $`D=b/2`$, $`\kappa=c`$ and $`\eta=\omega=0`$.
+
+The contraction fixes a finite span of smooth, rapidly decreasing packet and test vectors, a finite reference and a bounded interval of scaled times. Exact isometric spin encodings give trace-norm output error $`O(n^{-2/3})`$, with a constant depending on the span and time interval. This is enough to preserve a strictly negative witness at each fixed finite $`s`$. It follows that the spin's distance from all EB channels has a positive lower limit at every such $`s`$.
+
+The same reasoning cannot transfer the oscillator's upper bound. An upper bound concerns every spin input and reference, whereas the contraction controls the fixed chosen span. Moreover, a conditionally EB oscillator map is not a map on the full spin space. Thus $`n^{-2/3}`$ is a candidate crossover, not a finite-coefficient boundary beyond which the spin is asymptotically EB. A vanishing EB distance requires $`n^2t^3\to\infty`$; a matching global sufficiency theorem remains open. The [application bridge](../science/spin_contraction.md) gives the parameter dictionary, source ownership and the separate weaker global comparison.
+
 ## What survives, and what does not follow
 
 Every quantitative packet used above has finite energy, but this chosen construction's energy grows with time. A different argument shows that one fixed finitely squeezed two-mode input remains NPT forever when $`\eta=0`$: finite-rank local filtering on the reference would reveal the time-dependent witness, contradicting PPT if the original output were PPT. The filter can have negligible success probability. The [fixed-input account](../science/fixed_input.md) proves this precise statement.

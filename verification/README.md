@@ -42,3 +42,7 @@ Map and navigation assertions operate on current files, so a missing milestone, 
 - No Monte Carlo fit is used to infer the cubic exponent; upper and lower bounds are established analytically in [`science/cubic_distance.md`](../science/cubic_distance.md).
 - The normal semigroup and Gaussian pathwise criterion are mathematical steps, not inferred from a finite truncation of the Hilbert space.
 - Hosted mathematical rendering is a separate visual check. Passing the scripts does not certify how GitHub displays the pages.
+
+## Complete structural hosted comparison
+
+The read-only CI workflow now invokes the [pinned hosted helpers](hosted_tools/README.md) on every tracked Markdown page, including the spin application. It compares source expressions with actual GitHub MathML at widths 1440 and 760. The reports remain bound to the exact source commit; screenshots require separate visual review. The older visible-operator regression remains available in `check_hosted.py`.

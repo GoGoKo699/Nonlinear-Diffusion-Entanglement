@@ -29,6 +29,12 @@ When $`\eta=0`$, let $`e(t)`$ be the infimum of the half-diamond distance to all
 
 The upper bound applies uniformly to every input and reference; the lower bound is certified by compact, exactly orthogonal finite-energy momentum packets. The exponent's leading constant is **not** optimized. [Cubic-distance theorem](science/cubic_distance.md).
 
+## Sister project: rank-two spin diffusion
+
+**[Spin-Diffusion-Classicalization](https://github.com/GoGoKo699/Spin-Diffusion-Classicalization)** supplies a controlled growing-excitation contraction of rank-two spin noise to this nonlinear channel. At spin time $`t=s n^{-2/3}`$, the local limit has $`D=b/2`$, $`\kappa=c`$ and $`\eta=\omega=0`$. Transferring this repository's finite-energy NPT witnesses proves a positive limiting distance from EB for every fixed finite $`s>0`$. Consequently $`n^2t^3\to\infty`$ is necessary for vanishing EB distance; **no global sufficiency at this scale is established**.
+
+The [application bridge](science/spin_contraction.md) gives the parameter dictionary, precise local quantifiers and the remaining global gap. The spin sister owns the contraction and finite-spin comparison; this repository owns the nonlinear conditional covariance, exceptional-path bound and oscillator converse. Both use Holevo's 2019 second edition as their common educational anchor.
+
 ## The singular Gaussian boundary
 
 At $`\kappa=0`$, the channel instead has Gaussian additive noise (up to a Gaussian unitary), with entanglement-breaking threshold determined by
@@ -49,6 +55,7 @@ A single fixed, finitely squeezed two-mode squeezed vacuum also has NPT output a
 | Why does conditioning on quadratic noise produce a mixture of Gaussian channels? | [Conditional Gaussian representation](science/conditional_gaussian.md) |
 | Where is the exact entanglement-breaking cutoff proved? | [Sharp threshold and finite-energy witness](science/exact_threshold.md) |
 | Why is the channel uniformly close to classical but never exactly classical? | [Matching cubic logarithmic bounds](science/cubic_distance.md) |
+| What transfers to a growing spin, and what requires a separate global proof? | [Rank-two spin application](science/spin_contraction.md) |
 | Does one fixed finite-energy entangled input survive? | [Faithful-state corollary](science/fixed_input.md) |
 | Which conclusions matter physically and which do not follow? | [Interpretation and limits](science/interpretation.md) |
 | What is inherited and what distinguishes this result? | [Primary-literature comparison](references/RELATED_WORK.md) |
@@ -60,7 +67,7 @@ The [science index](science/README.md) gives a connected proof route. The [LLM-o
 
 The single educational anchor is **Alexander S. Holevo, _Quantum Systems, Channels, Information: A Mathematical Introduction_, second revised and expanded edition (2019)**. The [learning entrypoint](learning/README.md) offers a route through the physical question before the full proofs.
 
-The [Holevo bridge](learning/HOLEVO_BRIDGE.md) identifies the relevant sections, translates covariance, channel and energy conventions, and supplies the steps from Gaussian theory to the nonlinear mixture. The [worked primer](learning/PRIMER.md) begins with an exactly solved two-qubit example, then develops the stochastic shear, sharp threshold and operational meaning. The [30-milestone map](learning/MILESTONES.md) contains 14 background and 16 narrative targets, with explicit dependencies and scientific sources. It is a common understanding map, not a personalized assessment record.
+The [Holevo bridge](learning/HOLEVO_BRIDGE.md) identifies the relevant sections, translates covariance, channel and energy conventions, and supplies the steps from Gaussian theory to the nonlinear mixture. The [worked primer](learning/PRIMER.md) begins with an exactly solved two-qubit example, then develops the stochastic shear, sharp threshold, operational meaning and finite-spin application. The [30-milestone map](learning/MILESTONES.md) contains 14 background and 16 narrative targets, with explicit dependencies and scientific sources. It is a common understanding map, not a personalized assessment record.
 
 ## Reproduce
 
