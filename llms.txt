@@ -7,7 +7,7 @@ Conditional stochastic shear, Gaussian displacement covariance and Brownian tran
 Exact EB/PPT threshold and finite-energy Gaussian-packet converse: science/exact_threshold.md
 Energy-unconstrained cubic upper and compact-packet lower bounds: science/cubic_distance.md
 Rank-two spin sister application, parameter dictionary and local/global distinction: science/spin_contraction.md
-Authoritative spin contraction and finite-spin comparison: https://github.com/GoGoKo699/Spin-Diffusion-Classicalization/blob/bf31418c10302d1786451ddee9b9840f4d9983c8/science/rank_two_diffusion.md
+Authoritative spin contraction and finite-spin comparison: https://github.com/GoGoKo699/Spin-Diffusion-Classicalization/blob/59e7198b6450f3857fc0c8d4f407b7caecfd5d0d/science/rank_two_diffusion.md
 Fixed finitely squeezed input and bounded-reference-filter proof: science/fixed_input.md
 Gaussian kappa=0 comparison, weak-kappa upper bound and logical-fidelity consequences: science/interpretation.md
 Primary-source attribution and closest-work comparison: references/RELATED_WORK.md

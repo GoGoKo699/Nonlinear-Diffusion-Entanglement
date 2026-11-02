@@ -4,7 +4,7 @@
 
 The sister project [Spin-Diffusion-Classicalization](https://github.com/GoGoKo699/Spin-Diffusion-Classicalization) gives this nonlinear channel a controlled finite-spin application. A squeezed local contraction transfers the oscillator's reference-entanglement witness to growing spins. It does **not** transfer the oscillator's all-input EB upper bound to the whole spin channel.
 
-The full contraction proof, the independent finite-spin witness and the separate global comparison have their authoritative home in the sister's [rank-two account](https://github.com/GoGoKo699/Spin-Diffusion-Classicalization/blob/bf31418c10302d1786451ddee9b9840f4d9983c8/science/rank_two_diffusion.md). This page fixes the assumptions, parameter conversion and consequence needed to read this application independently. The nonlinear channel, conditional covariance and packet witnesses remain defined and proved in this repository.
+The full contraction proof, the independent finite-spin witness and the separate global comparison have their authoritative home in the sister's [rank-two account](https://github.com/GoGoKo699/Spin-Diffusion-Classicalization/blob/59e7198b6450f3857fc0c8d4f407b7caecfd5d0d/science/rank_two_diffusion.md). This page fixes the assumptions, parameter conversion and consequence needed to read this application independently. The nonlinear channel, conditional covariance and packet witnesses remain defined and proved in this repository.
 
 ## 1. The finite-spin question
 
